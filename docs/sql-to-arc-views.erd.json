@@ -1,0 +1,562 @@
+{
+  "schema_version": 1,
+  "diagram_type": "erd",
+  "meta": {
+    "title": "SQL-to-ARC \u2014 database view contract",
+    "locale": "en",
+    "quality_profile": "standard",
+    "output": "docs/sql-to-arc-views.html",
+    "repository": {
+      "url": "https://github.com/fairagro/m4.2_sql_to_arc.git",
+      "provider": "github",
+      "link_mode": "local-only",
+      "revision": "6ba87ef60c901bbb9cf01fc27d868422e1ed151f"
+    },
+    "views": [
+      {
+        "id": "isa-core",
+        "label": "ISA core",
+        "focus": [
+          "vInvestigation",
+          "vStudy",
+          "vAssay"
+        ],
+        "note": "One investigation row \u2192 one ARC"
+      },
+      {
+        "id": "attached",
+        "label": "Attached metadata",
+        "focus": [
+          "vPublication",
+          "vContact",
+          "vInvestigation"
+        ],
+        "note": "Always investigation_ref; optional target_*"
+      },
+      {
+        "id": "cells",
+        "label": "Annotation cells",
+        "focus": [
+          "vAnnotationTable",
+          "vStudy",
+          "vAssay"
+        ],
+        "note": "Denormalized table cells on study or assay"
+      }
+    ]
+  },
+  "layout": {
+    "mode": "grid",
+    "gapY": 36,
+    "gapX": 64
+  },
+  "entities": [
+    {
+      "id": "vInvestigation",
+      "label": "vInvestigation",
+      "tag": "ISA core",
+      "row": 0,
+      "col": 0,
+      "sources": [
+        {
+          "path": "middleware/sql_to_arc/src/middleware/sql_to_arc/models.py",
+          "line": 117,
+          "end_line": 126
+        },
+        {
+          "path": "docs/sql_to_arc_database_views.md",
+          "line": 76,
+          "end_line": 89
+        }
+      ],
+      "attributes": [
+        {
+          "name": "identifier",
+          "type": "TEXT",
+          "key": "pk"
+        },
+        {
+          "name": "title",
+          "type": "TEXT"
+        },
+        {
+          "name": "description_text",
+          "type": "TEXT"
+        },
+        {
+          "name": "submission_date",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "public_release_date",
+          "type": "TIMESTAMP"
+        }
+      ],
+      "width": 250
+    },
+    {
+      "id": "vStudy",
+      "label": "vStudy",
+      "tag": "ISA core",
+      "row": 1,
+      "col": 0,
+      "sources": [
+        {
+          "path": "middleware/sql_to_arc/src/middleware/sql_to_arc/models.py",
+          "line": 129,
+          "end_line": 139
+        },
+        {
+          "path": "docs/sql_to_arc_database_views.md",
+          "line": 133,
+          "end_line": 147
+        }
+      ],
+      "attributes": [
+        {
+          "name": "identifier",
+          "type": "TEXT",
+          "key": "pk"
+        },
+        {
+          "name": "investigation_ref",
+          "type": "TEXT",
+          "key": "fk",
+          "references": "vInvestigation.identifier"
+        },
+        {
+          "name": "title",
+          "type": "TEXT"
+        },
+        {
+          "name": "description_text",
+          "type": "TEXT"
+        },
+        {
+          "name": "submission_date",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "public_release_date",
+          "type": "TIMESTAMP"
+        }
+      ],
+      "width": 250
+    },
+    {
+      "id": "vAssay",
+      "label": "vAssay",
+      "tag": "ISA core",
+      "row": 2,
+      "col": 0,
+      "sources": [
+        {
+          "path": "middleware/sql_to_arc/src/middleware/sql_to_arc/models.py",
+          "line": 142,
+          "end_line": 159
+        },
+        {
+          "path": "docs/sql_to_arc_database_views.md",
+          "line": 149,
+          "end_line": 177
+        }
+      ],
+      "attributes": [
+        {
+          "name": "identifier",
+          "type": "TEXT",
+          "key": "pk"
+        },
+        {
+          "name": "investigation_ref",
+          "type": "TEXT",
+          "key": "fk",
+          "references": "vInvestigation.identifier"
+        },
+        {
+          "name": "study_ref",
+          "type": "TEXT \u00b7 JSON"
+        },
+        {
+          "name": "title",
+          "type": "TEXT"
+        },
+        {
+          "name": "description_text",
+          "type": "TEXT"
+        },
+        {
+          "name": "measurement_type_term",
+          "type": "TEXT"
+        },
+        {
+          "name": "measurement_type_uri",
+          "type": "TEXT"
+        },
+        {
+          "name": "measurement_type_version",
+          "type": "TEXT"
+        },
+        {
+          "name": "technology_type_term",
+          "type": "TEXT"
+        },
+        {
+          "name": "technology_type_uri",
+          "type": "TEXT"
+        },
+        {
+          "name": "technology_type_version",
+          "type": "TEXT"
+        },
+        {
+          "name": "technology_platform",
+          "type": "TEXT"
+        }
+      ],
+      "width": 260
+    },
+    {
+      "id": "vPublication",
+      "label": "vPublication",
+      "tag": "Attached",
+      "row": 0,
+      "col": 1,
+      "sources": [
+        {
+          "path": "middleware/sql_to_arc/src/middleware/sql_to_arc/models.py",
+          "line": 175,
+          "end_line": 189
+        },
+        {
+          "path": "docs/sql_to_arc_database_views.md",
+          "line": 91,
+          "end_line": 109
+        }
+      ],
+      "attributes": [
+        {
+          "name": "investigation_ref",
+          "type": "TEXT",
+          "key": "fk",
+          "references": "vInvestigation.identifier"
+        },
+        {
+          "name": "target_type",
+          "type": "TEXT"
+        },
+        {
+          "name": "target_ref",
+          "type": "TEXT"
+        },
+        {
+          "name": "pubmed_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "doi",
+          "type": "TEXT"
+        },
+        {
+          "name": "authors",
+          "type": "TEXT"
+        },
+        {
+          "name": "title",
+          "type": "TEXT"
+        },
+        {
+          "name": "status_term",
+          "type": "TEXT"
+        },
+        {
+          "name": "status_uri",
+          "type": "TEXT"
+        },
+        {
+          "name": "status_version",
+          "type": "TEXT"
+        }
+      ],
+      "width": 250
+    },
+    {
+      "id": "vContact",
+      "label": "vContact",
+      "tag": "Attached",
+      "row": 1,
+      "col": 1,
+      "sources": [
+        {
+          "path": "middleware/sql_to_arc/src/middleware/sql_to_arc/models.py",
+          "line": 192,
+          "end_line": 210
+        },
+        {
+          "path": "docs/sql_to_arc_database_views.md",
+          "line": 111,
+          "end_line": 131
+        }
+      ],
+      "attributes": [
+        {
+          "name": "investigation_ref",
+          "type": "TEXT",
+          "key": "fk",
+          "references": "vInvestigation.identifier"
+        },
+        {
+          "name": "target_type",
+          "type": "TEXT"
+        },
+        {
+          "name": "target_ref",
+          "type": "TEXT"
+        },
+        {
+          "name": "last_name",
+          "type": "TEXT"
+        },
+        {
+          "name": "first_name",
+          "type": "TEXT"
+        },
+        {
+          "name": "mid_initials",
+          "type": "TEXT"
+        },
+        {
+          "name": "email",
+          "type": "TEXT"
+        },
+        {
+          "name": "phone",
+          "type": "TEXT"
+        },
+        {
+          "name": "fax",
+          "type": "TEXT"
+        },
+        {
+          "name": "postal_address",
+          "type": "TEXT"
+        },
+        {
+          "name": "affiliation",
+          "type": "TEXT"
+        },
+        {
+          "name": "roles",
+          "type": "TEXT \u00b7 JSON"
+        }
+      ],
+      "width": 280
+    },
+    {
+      "id": "vAnnotationTable",
+      "label": "vAnnotationTable",
+      "tag": "Cells",
+      "row": 0,
+      "col": 2,
+      "sources": [
+        {
+          "path": "middleware/sql_to_arc/src/middleware/sql_to_arc/models.py",
+          "line": 234,
+          "end_line": 258
+        },
+        {
+          "path": "docs/sql_to_arc_database_views.md",
+          "line": 179,
+          "end_line": 220
+        }
+      ],
+      "attributes": [
+        {
+          "name": "investigation_ref",
+          "type": "TEXT",
+          "key": "fk",
+          "references": "vInvestigation.identifier"
+        },
+        {
+          "name": "target_type",
+          "type": "TEXT"
+        },
+        {
+          "name": "target_ref",
+          "type": "TEXT"
+        },
+        {
+          "name": "table_name",
+          "type": "TEXT"
+        },
+        {
+          "name": "column_type",
+          "type": "TEXT"
+        },
+        {
+          "name": "row_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "column_io_type",
+          "type": "TEXT"
+        },
+        {
+          "name": "column_value",
+          "type": "TEXT"
+        },
+        {
+          "name": "column_annotation_term",
+          "type": "TEXT"
+        },
+        {
+          "name": "column_annotation_uri",
+          "type": "TEXT"
+        },
+        {
+          "name": "column_annotation_version",
+          "type": "TEXT"
+        },
+        {
+          "name": "cell_value",
+          "type": "TEXT"
+        },
+        {
+          "name": "cell_annotation_term",
+          "type": "TEXT"
+        },
+        {
+          "name": "cell_annotation_uri",
+          "type": "TEXT"
+        },
+        {
+          "name": "cell_annotation_version",
+          "type": "TEXT"
+        }
+      ],
+      "width": 260
+    }
+  ],
+  "relationships": [
+    {
+      "id": "study-investigation",
+      "from": "vStudy",
+      "to": "vInvestigation",
+      "label": "investigation_ref",
+      "fromCardinality": "many",
+      "toCardinality": "one"
+    },
+    {
+      "id": "assay-investigation",
+      "from": "vAssay",
+      "to": "vInvestigation",
+      "label": "investigation_ref",
+      "fromCardinality": "many",
+      "toCardinality": "one"
+    },
+    {
+      "id": "assay-study",
+      "from": "vAssay",
+      "to": "vStudy",
+      "label": "study_ref JSON",
+      "fromCardinality": "many",
+      "toCardinality": "many",
+      "fromOptional": true,
+      "toOptional": true
+    },
+    {
+      "id": "publication-investigation",
+      "from": "vPublication",
+      "to": "vInvestigation",
+      "label": "investigation_ref",
+      "fromCardinality": "many",
+      "toCardinality": "one"
+    },
+    {
+      "id": "publication-study",
+      "from": "vPublication",
+      "to": "vStudy",
+      "label": "target_* study",
+      "fromCardinality": "many",
+      "fromOptional": true,
+      "toCardinality": "one",
+      "toOptional": true
+    },
+    {
+      "id": "contact-investigation",
+      "from": "vContact",
+      "to": "vInvestigation",
+      "label": "investigation_ref",
+      "fromCardinality": "many",
+      "toCardinality": "one"
+    },
+    {
+      "id": "contact-study",
+      "from": "vContact",
+      "to": "vStudy",
+      "label": "target_* study",
+      "fromCardinality": "many",
+      "fromOptional": true,
+      "toCardinality": "one",
+      "toOptional": true
+    },
+    {
+      "id": "contact-assay",
+      "from": "vContact",
+      "to": "vAssay",
+      "label": "target_* assay",
+      "fromCardinality": "many",
+      "fromOptional": true,
+      "toCardinality": "one",
+      "toOptional": true
+    },
+    {
+      "id": "annotation-investigation",
+      "from": "vAnnotationTable",
+      "to": "vInvestigation",
+      "label": "investigation_ref",
+      "fromCardinality": "many",
+      "toCardinality": "one"
+    },
+    {
+      "id": "annotation-study",
+      "from": "vAnnotationTable",
+      "to": "vStudy",
+      "label": "target_* study",
+      "fromCardinality": "many",
+      "fromOptional": true,
+      "toCardinality": "one",
+      "toOptional": true
+    },
+    {
+      "id": "annotation-assay",
+      "from": "vAnnotationTable",
+      "to": "vAssay",
+      "label": "target_* assay",
+      "fromCardinality": "many",
+      "fromOptional": true,
+      "toCardinality": "one",
+      "toOptional": true
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Contract",
+      "items": [
+        "Authoritative contract: docs/sql_to_arc_database_views.md",
+        "Converter validates six views in order via models.__view_name__",
+        "One vInvestigation.identifier \u2192 one ARC; other views enrich it"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Non-SQL links",
+      "items": [
+        "Assay\u2194Study uses study_ref JSON array, not a SQL FK",
+        "Publication / Contact / Annotation use polymorphic target_type + target_ref",
+        "Empty views are allowed; required columns must be non-NULL when rows exist"
+      ]
+    }
+  ]
+}
