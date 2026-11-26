@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="archify 3.2.0">
   <meta name="archify-reader-contract" content="declared-wide-v1">
-  <title>Harvest ingest: BL lives in the API or worker process Diagramm</title>
+  <title>Harvest ingest: API and worker processes Diagramm</title>
   <script>
     // Resolve the theme before first paint so light-preference users don't
     // see a dark flash. The toolbar script below re-applies with UI state.
@@ -5194,17 +5194,17 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
            data-preset-badge-blueprint="BAUPLAN / REV. 01"
            data-preset-badge-editorial="EDITORIAL / FELDNOTIZ">
         <div class="pulse-dot"></div>
-        <h1>Harvest ingest: BL lives in the API or worker process</h1>
+        <h1>Harvest ingest: API and worker processes</h1>
       </div>
     </div>
 
-    <script id="archify-source-evidence-data" type="application/json">{"schemaVersion":1,"verified":true,"repository":{"url":"git@github.com:fairagro/m4.2_advanced_middleware_api","revision":"d7756ceb54060d999567ebfaa924c523bc0dfa3a","shortRevision":"d7756ce","label":"fairagro/m4.2_advanced_middleware_api","linkMode":"local-only"},"referenceCount":11,"nodes":{"client":[{"path":"middleware/api_client/src/middleware/api_client/api_client.py","line":832,"endLine":851}],"api":[{"path":"middleware/api_v3/src/middleware/api_v3/routers/harvests.py","line":16,"endLine":68},{"path":"middleware/api/src/middleware/api/api/v3/lifecycle_port.py","line":61,"endLine":164}],"bl-api":[{"path":"middleware/api/src/middleware/api/business_logic/harvest_manager.py","line":61,"endLine":99},{"path":"middleware/api/src/middleware/api/business_logic/arc_manager.py","line":115,"endLine":210}],"store":[{"path":"middleware/api/src/middleware/api/document_store/couchdb.py","line":293,"endLine":367}],"broker":[{"path":"middleware/api/src/middleware/api/celery_integration.py","line":35,"endLine":37}],"worker":[{"path":"middleware/api/src/middleware/api/worker/worker.py","line":111,"endLine":155}],"bl-worker":[{"path":"middleware/api/src/middleware/api/business_logic/business_logic.py","line":260,"endLine":285},{"path":"middleware/api/src/middleware/api/business_logic/arc_manager.py","line":402,"endLine":464}],"arcstore":[{"path":"middleware/api/src/middleware/api/arc_store/__init__.py","line":95,"endLine":140}]}}</script>
+    <script id="archify-source-evidence-data" type="application/json">{"schemaVersion":1,"verified":true,"repository":{"url":"git@github.com:fairagro/m4.2_advanced_middleware_api","revision":"d7756ceb54060d999567ebfaa924c523bc0dfa3a","shortRevision":"d7756ce","label":"fairagro/m4.2_advanced_middleware_api","linkMode":"local-only"},"referenceCount":10,"nodes":{"client":[{"path":"middleware/api_client/src/middleware/api_client/api_client.py","line":832,"endLine":851}],"api":[{"path":"middleware/api_v3/src/middleware/api_v3/routers/harvests.py","line":16,"endLine":68},{"path":"middleware/api/src/middleware/api/api/v3/lifecycle_port.py","line":61,"endLine":164},{"path":"middleware/api/src/middleware/api/business_logic/harvest_manager.py","line":61,"endLine":99}],"store":[{"path":"middleware/api/src/middleware/api/document_store/couchdb.py","line":293,"endLine":367}],"broker":[{"path":"middleware/api/src/middleware/api/celery_integration.py","line":35,"endLine":37}],"worker":[{"path":"middleware/api/src/middleware/api/worker/worker.py","line":111,"endLine":155},{"path":"middleware/api/src/middleware/api/business_logic/business_logic.py","line":260,"endLine":285},{"path":"middleware/api/src/middleware/api/business_logic/arc_manager.py","line":402,"endLine":464}],"arcstore":[{"path":"middleware/api/src/middleware/api/arc_store/__init__.py","line":95,"endLine":140}]}}</script>
     <script id="archify-i18n-data" type="application/json">{"locale":"en","messages":{"viewer.kind.frontend":"Frontend","viewer.kind.backend":"Backend","viewer.kind.database":"Datenbank","viewer.kind.cloud":"Cloud","viewer.kind.security":"Sicherheit","viewer.kind.messagebus":"Nachrichtenbus","viewer.kind.external":"Extern","viewer.kind.neutral":"Neutral","viewer.kind.node":"Knoten","viewer.kind.start":"Start","viewer.kind.active":"Aktiv","viewer.kind.waiting":"Wartend","viewer.kind.decision":"Entscheidung","viewer.kind.success":"Erfolg","viewer.kind.failure":"Fehler","viewer.toolbar.actions":"Diagrammaktionen","viewer.theme.toggle.title":"Design wechseln (T)","viewer.theme.toggle":"Farbdesign wechseln","viewer.theme.dark":"Dunkel","viewer.theme.light":"Hell","viewer.preset.choose.title":"Visuellen Stil wählen (S wechselt durch)","viewer.preset.choose":"Visuellen Stil wählen","viewer.preset.style":"Stil","viewer.preset.menu":"Visueller Stil","viewer.preset.identity":"Visuelle Identität","viewer.preset.cycles":"S wechselt durch","viewer.preset.classic":"Klassisch","viewer.preset.classic.short":"Klassisch","viewer.preset.classic.hint":"Stabiler technischer Standard","viewer.preset.flow":"Signalfluss","viewer.preset.flow.short":"Fluss","viewer.preset.flow.hint":"Bewegungsbetonte Präsentation","viewer.preset.blueprint":"Bauplan","viewer.preset.blueprint.hint":"Technisches Review","viewer.preset.editorial":"Editorial","viewer.preset.editorial.hint":"Für Veröffentlichungen und Launch-Notizen","viewer.preset.badge.signalFlow":"SIGNALFLUSS","viewer.preset.badge.blueprint":"BAUPLAN / REV. 01","viewer.preset.badge.editorial":"EDITORIAL / FELDNOTIZ","viewer.preset.badge.editorialPlate":"ARCHIFY / TAFEL 04","viewer.preset.current":"Visueller Stil: {style}. Visuellen Stil wählen","viewer.motion.live":"Live","viewer.motion.still":"Statisch","viewer.motion.pause":"Bewegung pausieren","viewer.motion.resume":"Bewegung fortsetzen","viewer.motion.reduced":"Bewegung wegen reduzierter Bewegungseinstellung pausiert","viewer.motion.hidden":"Bewegung pausiert, während diese Seite ausgeblendet ist","viewer.motion.yielding":"Bewegung pausieren; derzeit an {owner} abgegeben","viewer.motion.yielding.title":"Live-Vorschau aktiv · an {owner} abgegeben","viewer.owner.route":"Routensonde","viewer.owner.lens":"Semantische Linse","viewer.owner.relationship":"Beziehungsvorschau","viewer.owner.intent":"Intent Trace","viewer.owner.focus":"semantischer Fokus","viewer.owner.legend":"Legendenvorschau","viewer.owner.reader":"Leserinteraktion","viewer.present.enter":"Präsentationsmodus starten","viewer.present.enter.title":"Präsentationsmodus (F)","viewer.present.exit":"Präsentationsmodus beenden","viewer.present.exit.title":"Präsentationsmodus beenden (F oder Escape)","viewer.present.present":"Präsentieren","viewer.present.exit.label":"Beenden","viewer.export.button":"Exportieren","viewer.export.button.title":"Diagramm exportieren (E)","viewer.export.diagram":"Diagramm exportieren","viewer.export.menu":"Exportieren","viewer.export.subtitle":"Portable, saubere Ausgaben","viewer.export.share":"Teilen","viewer.export.shareCard":"Freigabekarte","viewer.export.routeShareCard":"Routen-Freigabekarte","viewer.export.reachShareCard":"Reichweiten-Freigabekarte","viewer.export.copyDiagram":"Diagramm kopieren","viewer.export.clipboardPng":"PNG in Zwischenablage","viewer.export.raster":"Rasterbilder","viewer.export.image":"Bild","viewer.export.lossless":"Verlustfreies Bild","viewer.export.compact":"Kompaktes Bild","viewer.export.modern":"Modernes Bild","viewer.export.vectorMotion":"Vektor und Bewegung","viewer.export.vectorMotion.heading":"Vektor \u0026 Bewegung","viewer.export.editable":"Editierbarer Vektor","viewer.export.svg.auto":"SVG · Auto","viewer.export.svg.auto.hint":"Matches host theme","viewer.export.svg.light":"SVG · Light","viewer.export.svg.light.hint":"Always light","viewer.export.svg.dark":"SVG · Dark","viewer.export.svg.dark.hint":"Always dark","viewer.export.motion6s":"6-Sekunden-Bewegung","viewer.export.unsupported":"Von diesem Browser nicht unterstützt","viewer.export.clipboardUnsupported":"Bild-Zwischenablage wird von diesem Browser nicht unterstützt","viewer.export.clipboardUnsupported.short":"Dieser Browser unterstützt keine Bild-Zwischenablage.","viewer.export.motionUnavailable":"Bewegungsaufnahme in diesem Browser nicht verfügbar","viewer.export.webmUnavailable":"WebM in diesem Browser nicht verfügbar","viewer.export.failed":"Export fehlgeschlagen: {message}","viewer.export.unknownVariant":"Unbekannter Freigabekarten-Typ: {variant}","viewer.export.routeRequired":"Route verfolgen, bevor eine Routen-Freigabekarte exportiert wird","viewer.export.reachRequired":"Verfasste Reichweite verfolgen, bevor eine Reichweiten-Freigabekarte exportiert wird","viewer.export.unknown":"unbekannt","viewer.export.routeFailed":"Export der Routen-Freigabekarte fehlgeschlagen: {message}","viewer.export.reachFailed":"Export der Reichweiten-Freigabekarte fehlgeschlagen: {message}","viewer.export.copyFailed":"Kopieren fehlgeschlagen: {message}","viewer.export.copiedPng":"PNG in Zwischenablage kopiert","viewer.export.downloadedRoute":"Routen-Freigabekarte heruntergeladen","viewer.export.downloadedReach":"Reichweiten-Freigabekarte heruntergeladen","viewer.export.downloadedWebm":"WebM heruntergeladen","viewer.export.recording":"6 Sekunden Bewegung werden aufgezeichnet …","viewer.export.card.routeSummary.one":"Route: {source} → {target} · {count} gerichteter Hop","viewer.export.card.routeSummary.other":"Route: {source} → {target} · {count} gerichtete Hops","viewer.export.card.reachSummary":"Verfasst {direction} von {origin} · {nodes} · {links} · max. {hops}","viewer.export.card.node.one":"{count} Knoten","viewer.export.card.node.other":"{count} Knoten","viewer.export.card.link.one":"{count} Verbindung","viewer.export.card.link.other":"{count} Verbindungen","viewer.export.card.hop.one":"{count} Hop","viewer.export.card.hop.other":"{count} Hops","viewer.export.card.routeBadge":"ARCHIFY · ROUTE · {hops}","viewer.export.card.reachBadge":"ARCHIFY · {direction} REICHWEITE","viewer.export.direction.upstream":"Vorgelagert","viewer.export.direction.downstream":"Nachgelagert","viewer.export.error.canvasUnavailable":"Canvas für {label} nicht verfügbar","viewer.export.error.contextUnavailable":"2D-Canvas-Kontext für {label} nicht verfügbar","viewer.export.error.toBlobUnavailable":"canvas.toBlob für {label} nicht verfügbar","viewer.export.error.toBlobNull":"canvas.toBlob lieferte keine Daten für {label}","viewer.export.error.variantsCombined":"Freigabekarten-Typen können nicht kombiniert werden","viewer.export.error.viewerState":"Beim Export der Freigabekarte konnte der temporäre Viewer-Zustand nicht entfernt werden","viewer.export.error.routeState":"Beim Export der Routenkarte konnte die aufgelöste Route nicht sicher erhalten werden","viewer.export.error.reachState":"Beim Export der Reichweitenkarte konnte die verfasste Reichweite nicht sicher erhalten werden","viewer.export.error.webmRequirements":"Der WebM-Bewegungsexport erfordert eine Trace-Animation und Browser-Unterstützung für MediaRecorder","viewer.export.error.mediaRecorder":"MediaRecorder fehlgeschlagen","viewer.export.error.emptyWebm":"MediaRecorder hat ein leeres WebM erzeugt","viewer.export.error.webmBackground":"SVG-Hintergrund konnte für den WebM-Export nicht geladen werden","viewer.guide.title":"Explore this system","viewer.focus.selectedNodes":"{count} selected nodes","viewer.guide.eyebrow":"Diagrammleitfaden","viewer.guide.close":"Diagrammleitfaden schließen","viewer.guide.inspecting":"Kompilierte Semantik wird geprüft","viewer.guide.actions":"Diagramm-Erkundungsaktionen","viewer.guide.find":"Beliebigen Knoten finden","viewer.guide.find.hint":"Labels, Zuständigkeiten, Arten und stabile IDs durchsuchen.","viewer.guide.route":"Eine Route verfolgen","viewer.guide.route.aria":"Eine gerichtete Route verfolgen","viewer.guide.route.hint":"Herausfinden, wie zwei semantische Knoten in verfasster Richtung verbunden sind.","viewer.guide.map":"Das gesamte System sehen","viewer.guide.map.hint":"Semantisches Radar mit Live-Ansicht und stabilen Knoten öffnen.","viewer.guide.lens":"Semantische Arten vergleichen","viewer.guide.lens.hint":"Rollen zählen, ihren Verkehr sichtbar machen und direkte verfasste Verbindungen vergleichen.","viewer.guide.present":"Präsentationsmodus starten","viewer.guide.present.hint":"Dem Live-Diagramm die gesamte Ansicht geben, ohne den Export zu verändern.","viewer.guide.shortcuts":"Weitere Tastenkombinationen","viewer.guide.shortcut.export":"Exportieren","viewer.guide.shortcut.theme":"Design","viewer.guide.shortcut.style":"Stil","viewer.guide.shortcut.reset":"Zurücksetzen","viewer.guide.shortcut.zoomIn":"Vergrößern","viewer.guide.shortcut.zoomOut":"Verkleinern","viewer.guide.shortcut.close":"Schließen","viewer.guide.credit":"Find Archify useful? A star on GitHub helps","viewer.guide.star":"Star","viewer.guide.facts":"{nodes} · {relationships}","viewer.guide.fact.node.one":"{count} semantischer Knoten","viewer.guide.fact.node.other":"{count} semantische Knoten","viewer.guide.fact.relationship.one":"{count} Beziehung","viewer.guide.fact.relationship.other":"{count} Beziehungen","viewer.guide.open":"Diagrammleitfaden öffnen","viewer.finder.title":"Knoten finden","viewer.finder.close":"Knotensuche schließen","viewer.finder.placeholder":"Labels oder IDs suchen","viewer.finder.search":"Diagrammknoten durchsuchen","viewer.finder.results":"Diagrammknoten","viewer.finder.empty":"Keine passenden Knoten","viewer.finder.result.focus":"{label} fokussieren","viewer.finder.result.routeStart":"{label} als Routenstart wählen","viewer.finder.result.routeTarget":"{label} als Routenziel wählen, {links}","viewer.finder.status.empty":"Keine passenden Knoten","viewer.finder.status.count.one":"{count} passender Knoten","viewer.finder.status.count.other":"{count} passende Knoten","viewer.finder.noun.nodes":"Knoten","viewer.finder.link.one":"{count} Verbindung","viewer.finder.link.other":"{count} Verbindungen","viewer.finder.result.focus.one":"{label} fokussieren, {count} zugehörige Verbindung","viewer.finder.result.focus.other":"{label} fokussieren, {count} zugehörige Verbindungen","viewer.finder.status.filtered":"{visible} von {available} {noun}","viewer.finder.status.all":"{available} {noun}","viewer.passport.eyebrow":"Semantischer Pass","viewer.passport.metadata":"Knoten-Metadaten","viewer.passport.evidence":"Verifizierter Quellnachweis","viewer.passport.verified":"Verifizierte Quelle","viewer.passport.verificationScope":"Verifiziert gegen lokales Git zur fixierten Revision. Remote-Zugriff wurde nicht geprüft.","viewer.passport.reach":"Verfasste Reichweite","viewer.passport.reach.trace":"Verfasste Erreichbarkeit verfolgen","viewer.passport.upstream":"Vorgelagert","viewer.passport.downstream":"Nachgelagert","viewer.passport.upstream.trace":"Vorgelagerte verfasste Erreichbarkeit verfolgen","viewer.passport.downstream.trace":"Nachgelagerte verfasste Erreichbarkeit verfolgen","viewer.passport.close":"Semantischen Pass schließen","viewer.passport.move":"Move semantic passport. Drag, use arrow keys, or press Home to reset.","viewer.passport.copy":"Link kopieren","viewer.passport.copy.focus":"Link zum fokussierten Knoten kopieren","viewer.passport.relations":"Beziehungen","viewer.passport.relations.show":"Verbundene Beziehungen anzeigen","viewer.passport.relations.hide":"Verbundene Beziehungen ausblenden","viewer.passport.relations.list":"Verbundene Beziehungen","viewer.passport.copyRelation":"Beziehung kopieren","viewer.passport.copyNode":"Knoten kopieren","viewer.passport.copyPinned":"Link zur angehefteten Beziehung kopieren","viewer.passport.copySource":"Link zum Quellknoten kopieren","viewer.passport.copy.focused.success":"Link des fokussierten Knotens kopiert","viewer.passport.copy.pinned.success":"Link der angehefteten Beziehung kopiert","viewer.passport.copy.focused.failed":"Link des fokussierten Knotens konnte nicht kopiert werden","viewer.passport.copy.pinned.failed":"Link der angehefteten Beziehung konnte nicht kopiert werden","viewer.passport.relationship.none":"Keine verbundenen Beziehungen","viewer.passport.relationship.count.one":"{count} Beziehung","viewer.passport.relationship.count.other":"{count} Beziehungen","viewer.passport.relationship.show.one":"{count} verbundene Beziehung anzeigen","viewer.passport.relationship.show.other":"{count} verbundene Beziehungen anzeigen","viewer.passport.relationship.summary":"{out} ausgehend · {in} eingehend{loops}","viewer.passport.relationship.loops":" · {count} Selbstschleife","viewer.passport.relationship.explorer":"Direkter Beziehungs-Explorer","viewer.passport.relationship.help":"Pfeiltasten zum Erkunden der Beziehungen verwenden. Enter oder Leertaste heftet Details an; Escape hebt die Auswahl auf.","viewer.passport.relationship.loopsBack":"schleift zurück","viewer.passport.relationship.connectsTo":"verbindet zu","viewer.passport.relationship.connectsFrom":"verbindet von","viewer.passport.relationship.pinned":"Angeheftete Beziehung · {from} → {to} · {label}","viewer.passport.relationship.inspect":"Beziehung {index} von {total} prüfen: {from} zu {to}, {label}. Enter für Details drücken.","viewer.passport.relationship.group.out":"Ausgehend","viewer.passport.relationship.group.in":"Eingehend","viewer.passport.relationship.group.loop":"Selbstschleifen","viewer.passport.relationship.row":"{group}: {relationship}, {neighbor}","viewer.passport.relationship.direction.out":"AUS →","viewer.passport.relationship.direction.in":"← EIN","viewer.passport.relationship.direction.loop":"SCHLEIFE","viewer.passport.sourceCount.one":"{count} verifizierte Quellenreferenz","viewer.passport.sourceCount.other":"{count} verifizierte Quellenreferenzen","viewer.passport.repository.open":"Verifizierte Repository-Revision {revision} öffnen","viewer.passport.source.open":"Verifizierte Quelle {path} bei Revision {revision} öffnen","viewer.passport.source.openLink":"Öffnen ↗","viewer.passport.reach.upstream.one":"{count} vorgelagerten verfassten Knoten verfolgen","viewer.passport.reach.upstream.other":"{count} vorgelagerte verfasste Knoten verfolgen","viewer.passport.reach.downstream.one":"{count} nachgelagerten verfassten Knoten verfolgen","viewer.passport.reach.downstream.other":"{count} nachgelagerte verfasste Knoten verfolgen","viewer.passport.reach.noUpstream":"Keine vorgelagerten verfassten Knoten","viewer.passport.reach.noDownstream":"Keine nachgelagerten verfassten Knoten","viewer.passport.reach.status":"{direction} · {nodes} Knoten · {links} Verbindungen · max. {hops} Hops","viewer.route.eyebrow":"Routensonde","viewer.route.start":"Startknoten wählen","viewer.route.start.find":"Start finden","viewer.route.start.find.aria":"Einen Routenstart finden","viewer.route.copy":"Link kopieren","viewer.route.copy.aria":"Link zur verfolgten Route kopieren","viewer.route.clear":"Löschen","viewer.route.clear.aria":"Routensonde löschen","viewer.route.traced":"Verfolgte Route","viewer.route.pickTwo":"Zwei semantische Knoten im Diagramm auswählen","viewer.route.pickOne":"Einen semantischen Knoten im Diagramm auswählen","viewer.route.controls":"Routen-Verlaufssteuerung","viewer.route.previous":"Vorherige Routenposition","viewer.route.play":"Routenverlauf abspielen","viewer.route.pause":"Routenverlauf pausieren","viewer.route.replay":"Routenverlauf erneut abspielen","viewer.route.next":"Nächste Routenposition","viewer.route.journey":"Verlauf","viewer.route.pause.label":"Pausieren","viewer.route.replay.label":"Erneut abspielen","viewer.route.overview":"Übersicht","viewer.route.overview.aria":"Vollständige Routenübersicht anzeigen","viewer.route.instructions":"Quelle wählen, dann das Ziel. Die Richtung ist entscheidend.","viewer.route.destination":"Ziel ausgehend von {label} wählen","viewer.route.destination.find":"Ziel finden","viewer.route.destination.find.aria":"Ein erreichbares Routenziel finden","viewer.route.differentDestination":"Anderes Ziel wählen","viewer.route.distinct":"Eine Route benötigt zwei unterschiedliche semantische Knoten.","viewer.route.unreachable":"Keine gerichtete Route zu {label}","viewer.route.unreachable.detail":"{target} ist von {source} aus nicht erreichbar. Ein hervorgehobenes Ziel wählen.","viewer.route.start.instructions":"Quelle auswählen. Im nächsten Schritt werden nur gerichtete Ziele angezeigt.","viewer.route.copy.success":"Link zur verfolgten Route kopiert","viewer.route.copy.failed":"Link zur verfolgten Route konnte nicht kopiert werden","viewer.route.position":"Routenposition {index} von {total}: {label}","viewer.route.step":"Schritt {index} von {total} · {phase} · {label}","viewer.route.motionRequired":"Automatischer Verlauf erfordert Live-Bewegung","viewer.route.trigger.clear":"Verfolgte Route löschen","viewer.route.overview.status":"{nodes} · {hops} · kürzeste verfasste Route","viewer.route.overview.node.one":"{count} Knoten","viewer.route.overview.node.other":"{count} Knoten","viewer.route.overview.hop.one":"{count} gerichteter Hop","viewer.route.overview.hop.other":"{count} gerichtete Hops","viewer.route.phase.playing":"Läuft","viewer.route.phase.complete":"Abgeschlossen","viewer.route.phase.inspecting":"Wird geprüft","viewer.route.destination.count.one":"{count} gerichtetes Ziel verfügbar. Einen hervorgehobenen Knoten wählen.","viewer.route.destination.count.other":"{count} gerichtete Ziele verfügbar. Einen hervorgehobenen Knoten wählen.","viewer.route.noOutgoing":"Hier startet keine ausgehende Route. Löschen und eine andere Quelle wählen.","viewer.route.result.title":"{source} nach {target}","viewer.route.finder.source.title":"Routenstart wählen","viewer.route.finder.source.placeholder":"Routenquellen suchen","viewer.route.finder.source.empty":"Keine passenden Routenquellen","viewer.route.finder.source.results":"Knoten, die eine Route starten können","viewer.route.finder.source.noun":"Routenquellen","viewer.route.finder.source.badge":"Start","viewer.route.finder.target.title":"Ziel ausgehend von {label}","viewer.route.finder.target.placeholder":"Erreichbare Ziele suchen","viewer.route.finder.target.empty":"Keine passenden erreichbaren Ziele","viewer.route.finder.target.results":"Erreichbare Routenziele","viewer.route.finder.target.noun":"erreichbare Ziele","viewer.route.hop.one":"{count} Hop","viewer.route.hop.other":"{count} Hops","viewer.lens.eyebrow":"Semantische Linse","viewer.lens.title":"Systemrollen vergleichen","viewer.lens.close":"Semantische Linse schließen","viewer.lens.instruction":"Bis zu zwei semantische Arten wählen. Eine zeigt ihren echten Verkehr; zwei vergleichen nur direkte verfasste Beziehungen.","viewer.lens.kinds":"Semantische Arten","viewer.lens.choose":"Eine Art wählen, um ihre Knoten und berührenden Beziehungen zu prüfen.","viewer.lens.copy":"Link zur semantischen Linse kopieren","viewer.lens.clear":"Semantische Linse löschen","viewer.lens.open":"Semantische Linse öffnen","viewer.lens.openActive":"Aktive semantische Linse öffnen","viewer.lens.legend":"Semantische Legende","viewer.lens.legend.inspect.one":"{label} prüfen, {count} Knoten","viewer.lens.legend.inspect.other":"{label} prüfen, {count} Knoten","viewer.lens.kind.count.one":"{label}, {count} Knoten","viewer.lens.kind.count.other":"{label}, {count} Knoten","viewer.lens.compare.one":"{first} → {second}: {forward} · {second} → {first}: {reverse} · {count} direkte Beziehung","viewer.lens.compare.other":"{first} → {second}: {forward} · {second} → {first}: {reverse} · {count} direkte Beziehungen","viewer.lens.single":"{nodes} · {relationships} · verbundene Nachbarn bleiben sichtbar","viewer.lens.node.one":"{count} {label}-Knoten","viewer.lens.node.other":"{count} {label}-Knoten","viewer.lens.relationship.one":"{count} berührende Beziehung","viewer.lens.relationship.other":"{count} berührende Beziehungen","viewer.radar.title":"Semantisches Radar","viewer.radar.building":"Übersicht wird erstellt","viewer.radar.openFull":"Vollständiges semantisches Radar öffnen","viewer.radar.open":"Radar öffnen","viewer.radar.close":"Semantisches Radar schließen","viewer.radar.surface":"Diagrammübersicht. Auf einen Knoten klicken, um ihn zu fokussieren, oder mit den Pfeiltasten schwenken.","viewer.radar.click":"Knoten anklicken","viewer.radar.drag":"Ziehen zum Schwenken","viewer.radar.space":"Semantisches Radar benötigt mehr MAP-Platz.","viewer.radar.nodes":"Semantische Diagramm-Radarknoten","viewer.radar.focus":"{label} vom semantischen Radar fokussieren","viewer.radar.status":"{count} Knoten · {viewport}","viewer.radar.fullMap":"{count} Knoten · vollständige Karte","viewer.radar.compacted":"Radar verkleinert, um den semantischen Pass oder die MAP-Steuerung nicht zu verdecken.","viewer.radar.cancelWaiting":"Wartendes semantisches Radar auf mehr MAP-Platz abbrechen","viewer.radar.needsSpace":"Semantisches Radar benötigt mehr sichtbaren MAP-Platz","viewer.radar.viewport.full":"vollständige Karte","viewer.radar.viewport.width":"{percent}% Breite","viewer.radar.viewport.scale":"{percent}% Ansicht","viewer.nav.controls":"Diagrammansicht-Steuerung","viewer.nav.route":"Eine gerichtete Route verfolgen","viewer.nav.route.title":"Route verfolgen (R)","viewer.nav.route.short":"PFAD","viewer.nav.radar":"Semantisches Radar öffnen","viewer.nav.radar.title":"Semantisches Radar (M)","viewer.nav.radar.short":"KARTE","viewer.nav.lens":"Semantische Linse öffnen","viewer.nav.lens.title":"Semantische Linse (L)","viewer.nav.lens.short":"LINSE","viewer.nav.find":"Knoten finden","viewer.nav.find.title":"Knoten finden (/)","viewer.outline.title":"Node index","viewer.rail.show":"Notes \u0026 index","viewer.rail.controls":"Side panel","viewer.rail.collapse":"Collapse side panel","viewer.rail.bottom":"Move panel below the diagram","viewer.rail.right":"Move panel beside the diagram","viewer.nav.guide":"Diagrammleitfaden öffnen","viewer.nav.guide.title":"Diagrammleitfaden (?)","viewer.nav.zoomOut":"Verkleinern","viewer.nav.zoomOut.title":"Verkleinern (-)","viewer.nav.reset":"Diagrammansicht zurücksetzen","viewer.nav.reset.title":"Ansicht zurücksetzen (0)","viewer.nav.read":"LESEN","viewer.nav.zoomIn":"Vergrößern","viewer.nav.zoomIn.title":"Vergrößern (+)","viewer.nav.camera":"{hint}. Diagrammansicht zurücksetzen","viewer.nav.camera.title":"{semantic}{hint} · Ansicht zurücksetzen (0)","viewer.nav.camera.semantic":"Semantische Kamera aktiv · ","viewer.nav.level.map":"KARTE","viewer.nav.level.read":"LESEN","viewer.nav.level.full":"VOLL","viewer.nav.level.auto":"AUTO","viewer.nav.detail.map":"Vergrößern, um Beziehungslabels und Knotenkontext anzuzeigen","viewer.nav.detail.read":"Erneut vergrößern, um Tags und Anmerkungen anzuzeigen","viewer.nav.detail.full":"Vollständige Diagrammdetails","viewer.intent.summary":"{label}. {out} ausgehend, {in} eingehend{loops}. {total} Verbindungen. Enter für Details drücken.","viewer.intent.loops":", {count} Selbstschleife","viewer.common.copied":"Kopiert","viewer.common.copyFailed":"Kopieren fehlgeschlagen","viewer.common.copyLink":"Link kopieren","viewer.common.clear":"Löschen","viewer.common.close":"Schließen"}}</script>
     <!-- Main Diagram -->
     <div class="diagram-container" data-detail-level="read"
          data-preset-badge-editorial-plate="ARCHIFY / TAFEL 04">
-      <svg viewBox="0 0 920 1013" data-sequence-column-fit="spread" data-reader-fit="width-first" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-motion-choreography="sequence">
-        <title id="archify-diagram-title">Harvest ingest: BL lives in the API or worker process</title>
+      <svg viewBox="0 0 920 838" data-sequence-column-fit="spread" data-reader-fit="width-first" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-motion-choreography="sequence">
+        <title id="archify-diagram-title">Harvest ingest: API and worker processes</title>
         <desc id="archify-diagram-description">Ein von Archify erstelltes Sequenzdiagramm.</desc>
         <!-- Definitions -->
         <defs>
@@ -5229,196 +5229,150 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Time Segments -->
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="segment" data-composition-frame-id="0" x="48" y="156" width="824" height="223" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="segment" data-composition-frame-id="0" x="48" y="156" width="824" height="153" rx="10" class="c-lane" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="segment" data-composition-frame-id="1" x="48" y="420" width="824" height="239" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="segment" data-composition-frame-id="1" x="48" y="350" width="824" height="169" rx="10" class="c-lane" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="segment" data-composition-frame-id="2" x="48" y="685" width="824" height="230" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="segment" data-composition-frame-id="2" x="48" y="545" width="824" height="195" rx="10" class="c-lane" stroke-width="1"/>
 
         <!-- Lifelines -->
-        <path d="M 105 142 L 105 917" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 209.57142857142856 142 L 209.57142857142856 917" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 314.1428571428571 142 L 314.1428571428571 917" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 418.7142857142857 142 L 418.7142857142857 917" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 523.2857142857142 142 L 523.2857142857142 917" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 627.8571428571429 142 L 627.8571428571429 917" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 732.4285714285714 142 L 732.4285714285714 917" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
-        <path d="M 837 142 L 837 917" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 116.5 142 L 116.5 742" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 258.3 142 L 258.3 742" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 400.1 142 L 400.1 742" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 541.9000000000001 142 L 541.9000000000001 742" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 683.7 142 L 683.7 742" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
+        <path d="M 825.5 142 L 825.5 742" class="a-default" stroke-width="0.8" stroke-dasharray="3,7"/>
 
         <!-- Activations -->
-        <rect x="100" y="200" width="10" height="175" rx="3" class="c-mask"/>
-        <rect x="100" y="200" width="10" height="175" rx="3" class="c-external" stroke-width="1"/>
-        <rect x="100" y="445" width="10" height="210" rx="3" class="c-mask"/>
-        <rect x="100" y="445" width="10" height="210" rx="3" class="c-external" stroke-width="1"/>
-        <rect x="204.57142857142856" y="200" width="10" height="465" rx="3" class="c-mask"/>
-        <rect x="204.57142857142856" y="200" width="10" height="465" rx="3" class="c-backend" stroke-width="1"/>
-        <rect x="309.1428571428571" y="230" width="10" height="400" rx="3" class="c-mask"/>
-        <rect x="309.1428571428571" y="230" width="10" height="400" rx="3" class="c-backend" stroke-width="1"/>
-        <rect x="413.7142857142857" y="265" width="10" height="50" rx="3" class="c-mask"/>
-        <rect x="413.7142857142857" y="265" width="10" height="50" rx="3" class="c-database" stroke-width="1"/>
-        <rect x="413.7142857142857" y="510" width="10" height="50" rx="3" class="c-mask"/>
-        <rect x="413.7142857142857" y="510" width="10" height="50" rx="3" class="c-database" stroke-width="1"/>
-        <rect x="518.2857142857142" y="580" width="10" height="140" rx="3" class="c-mask"/>
-        <rect x="518.2857142857142" y="580" width="10" height="140" rx="3" class="c-messagebus" stroke-width="1"/>
-        <rect x="622.8571428571429" y="705" width="10" height="50" rx="3" class="c-mask"/>
-        <rect x="622.8571428571429" y="705" width="10" height="50" rx="3" class="c-backend" stroke-width="1"/>
-        <rect x="727.4285714285714" y="740" width="10" height="155" rx="3" class="c-mask"/>
-        <rect x="727.4285714285714" y="740" width="10" height="155" rx="3" class="c-backend" stroke-width="1"/>
-        <rect x="832" y="775" width="10" height="50" rx="3" class="c-mask"/>
-        <rect x="832" y="775" width="10" height="50" rx="3" class="c-cloud" stroke-width="1"/>
-        <rect x="413.7142857142857" y="845" width="10" height="50" rx="3" class="c-mask"/>
-        <rect x="413.7142857142857" y="845" width="10" height="50" rx="3" class="c-database" stroke-width="1"/>
+        <rect x="111.5" y="200" width="10" height="105" rx="3" class="c-mask"/>
+        <rect x="111.5" y="200" width="10" height="105" rx="3" class="c-external" stroke-width="1"/>
+        <rect x="111.5" y="375" width="10" height="140" rx="3" class="c-mask"/>
+        <rect x="111.5" y="375" width="10" height="140" rx="3" class="c-external" stroke-width="1"/>
+        <rect x="253.3" y="200" width="10" height="320" rx="3" class="c-mask"/>
+        <rect x="253.3" y="200" width="10" height="320" rx="3" class="c-backend" stroke-width="1"/>
+        <rect x="395.1" y="230" width="10" height="45" rx="3" class="c-mask"/>
+        <rect x="395.1" y="230" width="10" height="45" rx="3" class="c-database" stroke-width="1"/>
+        <rect x="395.1" y="405" width="10" height="45" rx="3" class="c-mask"/>
+        <rect x="395.1" y="405" width="10" height="45" rx="3" class="c-database" stroke-width="1"/>
+        <rect x="536.9000000000001" y="475" width="10" height="100" rx="3" class="c-mask"/>
+        <rect x="536.9000000000001" y="475" width="10" height="100" rx="3" class="c-messagebus" stroke-width="1"/>
+        <rect x="678.7" y="565" width="10" height="150" rx="3" class="c-mask"/>
+        <rect x="678.7" y="565" width="10" height="150" rx="3" class="c-backend" stroke-width="1"/>
+        <rect x="820.5" y="600" width="10" height="45" rx="3" class="c-mask"/>
+        <rect x="820.5" y="600" width="10" height="45" rx="3" class="c-cloud" stroke-width="1"/>
+        <rect x="395.1" y="670" width="10" height="45" rx="3" class="c-mask"/>
+        <rect x="395.1" y="670" width="10" height="45" rx="3" class="c-database" stroke-width="1"/>
 
         <!-- Messages -->
         <g data-edge-from="client" data-edge-to="api" data-edge-label="harvest" data-edge-key="0" data-edge-id="m1">
-          <path data-composition-edge-from="client" data-composition-edge-to="api" data-composition-edge-id="m1" data-composition-points="112,200;202.57142857142856,200" d="M 112 200 L 202.57142857142856 200" class="a-emphasis" data-animate="edge" style="--step:0" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+          <path data-composition-edge-from="client" data-composition-edge-to="api" data-composition-edge-id="m1" data-composition-points="123.5,200;251.3,200" d="M 123.5 200 L 251.3 200" class="a-emphasis" data-animate="edge" style="--step:0" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         <g data-detail="context">
-          <rect x="128.18571428571428" y="180" width="58.199999999999996" height="18" rx="3" class="c-mask"/>
-          <text x="157.28571428571428" y="190" class="t-edge-emphasis" font-size="11" text-anchor="middle">harvest</text>
+          <rect x="158.3" y="180" width="58.199999999999996" height="18" rx="3" class="c-mask"/>
+          <text x="187.4" y="190" class="t-edge-emphasis" font-size="11" text-anchor="middle">harvest</text>
         </g>
         </g>
 
-        <g data-edge-from="api" data-edge-to="bl-api" data-edge-label="create" data-edge-key="1" data-edge-id="m2">
-          <path data-composition-edge-from="api" data-composition-edge-to="bl-api" data-composition-edge-id="m2" data-composition-points="216.57142857142856,235;307.1428571428571,235" d="M 216.57142857142856 235 L 307.1428571428571 235" class="a-default" data-animate="edge" style="--step:1" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <g data-edge-from="api" data-edge-to="store" data-edge-label="save" data-edge-key="1" data-edge-id="m2">
+          <path data-composition-edge-from="api" data-composition-edge-to="store" data-composition-edge-id="m2" data-composition-points="265.3,235;393.1,235" d="M 265.3 235 L 393.1 235" class="a-default" data-animate="edge" style="--step:1" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="236.05714285714282" y="215" width="51.599999999999994" height="18" rx="3" class="c-mask"/>
-          <text x="261.85714285714283" y="225" class="t-muted" font-size="11" text-anchor="middle">create</text>
+          <rect x="310.00000000000006" y="215" width="38.4" height="18" rx="3" class="c-mask"/>
+          <text x="329.20000000000005" y="225" class="t-muted" font-size="11" text-anchor="middle">save</text>
         </g>
         </g>
 
-        <g data-edge-from="bl-api" data-edge-to="store" data-edge-label="save" data-edge-key="2" data-edge-id="m3">
-          <path data-composition-edge-from="bl-api" data-composition-edge-to="store" data-composition-edge-id="m3" data-composition-points="321.1428571428571,270;411.7142857142857,270" d="M 321.1428571428571 270 L 411.7142857142857 270" class="a-default" data-animate="edge" style="--step:2" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <g data-edge-from="store" data-edge-to="api" data-edge-label="ok" data-edge-key="2" data-edge-id="m3">
+          <path data-composition-edge-from="store" data-composition-edge-to="api" data-composition-edge-id="m3" data-composition-points="393.1,270;265.3,270" d="M 393.1 270 L 265.3 270" class="a-default" data-animate="edge" style="--step:2" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="347.22857142857146" y="250" width="38.4" height="18" rx="3" class="c-mask"/>
-          <text x="366.42857142857144" y="260" class="t-muted" font-size="11" text-anchor="middle">save</text>
+          <rect x="312.20000000000005" y="250" width="34" height="18" rx="3" class="c-mask"/>
+          <text x="329.20000000000005" y="260" class="t-muted" font-size="11" text-anchor="middle">ok</text>
         </g>
         </g>
 
-        <g data-edge-from="store" data-edge-to="bl-api" data-edge-label="ok" data-edge-key="3" data-edge-id="m4">
-          <path data-composition-edge-from="store" data-composition-edge-to="bl-api" data-composition-edge-id="m4" data-composition-points="411.7142857142857,305;321.1428571428571,305" d="M 411.7142857142857 305 L 321.1428571428571 305" class="a-default" data-animate="edge" style="--step:3" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
+        <g data-edge-from="api" data-edge-to="client" data-edge-label="ok" data-edge-key="3" data-edge-id="m4">
+          <path data-composition-edge-from="api" data-composition-edge-to="client" data-composition-edge-id="m4" data-composition-points="251.3,305;123.5,305" d="M 251.3 305 L 123.5 305" class="a-default" data-animate="edge" style="--step:3" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="349.42857142857144" y="285" width="34" height="18" rx="3" class="c-mask"/>
-          <text x="366.42857142857144" y="295" class="t-muted" font-size="11" text-anchor="middle">ok</text>
+          <rect x="170.4" y="285" width="34" height="18" rx="3" class="c-mask"/>
+          <text x="187.4" y="295" class="t-muted" font-size="11" text-anchor="middle">ok</text>
         </g>
         </g>
 
-        <g data-edge-from="bl-api" data-edge-to="api" data-edge-label="ok" data-edge-key="4" data-edge-id="m5">
-          <path data-composition-edge-from="bl-api" data-composition-edge-to="api" data-composition-edge-id="m5" data-composition-points="307.1428571428571,340;216.57142857142856,340" d="M 307.1428571428571 340 L 216.57142857142856 340" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
+        <g data-edge-from="client" data-edge-to="api" data-edge-label="arc" data-edge-key="4" data-edge-id="m5">
+          <path data-composition-edge-from="client" data-composition-edge-to="api" data-composition-edge-id="m5" data-composition-points="123.5,375;251.3,375" d="M 123.5 375 L 251.3 375" class="a-emphasis" data-animate="edge" style="--step:4" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         <g data-detail="context">
-          <rect x="244.85714285714283" y="320" width="34" height="18" rx="3" class="c-mask"/>
-          <text x="261.85714285714283" y="330" class="t-muted" font-size="11" text-anchor="middle">ok</text>
+          <rect x="170.4" y="355" width="34" height="18" rx="3" class="c-mask"/>
+          <text x="187.4" y="365" class="t-edge-emphasis" font-size="11" text-anchor="middle">arc</text>
         </g>
         </g>
 
-        <g data-edge-from="api" data-edge-to="client" data-edge-label="ok" data-edge-key="5" data-edge-id="m6">
-          <path data-composition-edge-from="api" data-composition-edge-to="client" data-composition-edge-id="m6" data-composition-points="202.57142857142856,375;112,375" d="M 202.57142857142856 375 L 112 375" class="a-default" data-animate="edge" style="--step:5" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
+        <g data-edge-from="api" data-edge-to="store" data-edge-label="store" data-edge-key="5" data-edge-id="m6">
+          <path data-composition-edge-from="api" data-composition-edge-to="store" data-composition-edge-id="m6" data-composition-points="265.3,410;393.1,410" d="M 265.3 410 L 393.1 410" class="a-default" data-animate="edge" style="--step:5" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="140.28571428571428" y="355" width="34" height="18" rx="3" class="c-mask"/>
-          <text x="157.28571428571428" y="365" class="t-muted" font-size="11" text-anchor="middle">ok</text>
+          <rect x="306.70000000000005" y="390" width="45" height="18" rx="3" class="c-mask"/>
+          <text x="329.20000000000005" y="400" class="t-muted" font-size="11" text-anchor="middle">store</text>
         </g>
         </g>
 
-        <g data-edge-from="client" data-edge-to="api" data-edge-label="arc" data-edge-key="6" data-edge-id="m7">
-          <path data-composition-edge-from="client" data-composition-edge-to="api" data-composition-edge-id="m7" data-composition-points="112,445;202.57142857142856,445" d="M 112 445 L 202.57142857142856 445" class="a-emphasis" data-animate="edge" style="--step:6" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <g data-edge-from="store" data-edge-to="api" data-edge-label="ok" data-edge-key="6" data-edge-id="m7">
+          <path data-composition-edge-from="store" data-composition-edge-to="api" data-composition-edge-id="m7" data-composition-points="393.1,445;265.3,445" d="M 393.1 445 L 265.3 445" class="a-default" data-animate="edge" style="--step:6" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="140.28571428571428" y="425" width="34" height="18" rx="3" class="c-mask"/>
-          <text x="157.28571428571428" y="435" class="t-edge-emphasis" font-size="11" text-anchor="middle">arc</text>
+          <rect x="312.20000000000005" y="425" width="34" height="18" rx="3" class="c-mask"/>
+          <text x="329.20000000000005" y="435" class="t-muted" font-size="11" text-anchor="middle">ok</text>
         </g>
         </g>
 
-        <g data-edge-from="api" data-edge-to="bl-api" data-edge-label="upsert" data-edge-key="7" data-edge-id="m8">
-          <path data-composition-edge-from="api" data-composition-edge-to="bl-api" data-composition-edge-id="m8" data-composition-points="216.57142857142856,480;307.1428571428571,480" d="M 216.57142857142856 480 L 307.1428571428571 480" class="a-default" data-animate="edge" style="--step:7" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <g data-edge-from="api" data-edge-to="broker" data-edge-label="queue" data-edge-key="7" data-edge-id="m8">
+          <path data-composition-edge-from="api" data-composition-edge-to="broker" data-composition-edge-id="m8" data-composition-points="265.3,480;534.9000000000001,480" d="M 265.3 480 L 534.9000000000001 480" class="a-dashed" data-animate="edge" style="--step:7" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
         <g data-detail="context">
-          <rect x="236.05714285714282" y="460" width="51.599999999999994" height="18" rx="3" class="c-mask"/>
-          <text x="261.85714285714283" y="470" class="t-muted" font-size="11" text-anchor="middle">upsert</text>
+          <rect x="377.6" y="460" width="45" height="18" rx="3" class="c-mask"/>
+          <text x="400.1" y="470" class="t-edge-dashed" font-size="11" text-anchor="middle">queue</text>
         </g>
         </g>
 
-        <g data-edge-from="bl-api" data-edge-to="store" data-edge-label="store" data-edge-key="8" data-edge-id="m9">
-          <path data-composition-edge-from="bl-api" data-composition-edge-to="store" data-composition-edge-id="m9" data-composition-points="321.1428571428571,515;411.7142857142857,515" d="M 321.1428571428571 515 L 411.7142857142857 515" class="a-default" data-animate="edge" style="--step:8" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <g data-edge-from="api" data-edge-to="client" data-edge-label="ok" data-edge-key="8" data-edge-id="m9">
+          <path data-composition-edge-from="api" data-composition-edge-to="client" data-composition-edge-id="m9" data-composition-points="251.3,515;123.5,515" d="M 251.3 515 L 123.5 515" class="a-default" data-animate="edge" style="--step:8" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="343.92857142857144" y="495" width="45" height="18" rx="3" class="c-mask"/>
-          <text x="366.42857142857144" y="505" class="t-muted" font-size="11" text-anchor="middle">store</text>
+          <rect x="170.4" y="495" width="34" height="18" rx="3" class="c-mask"/>
+          <text x="187.4" y="505" class="t-muted" font-size="11" text-anchor="middle">ok</text>
         </g>
         </g>
 
-        <g data-edge-from="store" data-edge-to="bl-api" data-edge-label="ok" data-edge-key="9" data-edge-id="m10">
-          <path data-composition-edge-from="store" data-composition-edge-to="bl-api" data-composition-edge-id="m10" data-composition-points="411.7142857142857,550;321.1428571428571,550" d="M 411.7142857142857 550 L 321.1428571428571 550" class="a-default" data-animate="edge" style="--step:9" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
+        <g data-edge-from="broker" data-edge-to="worker" data-edge-label="task" data-edge-key="9" data-edge-id="m10">
+          <path data-composition-edge-from="broker" data-composition-edge-to="worker" data-composition-edge-id="m10" data-composition-points="548.9000000000001,570;676.7,570" d="M 548.9000000000001 570 L 676.7 570" class="a-dashed" data-animate="edge" style="--step:9" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
         <g data-detail="context">
-          <rect x="349.42857142857144" y="530" width="34" height="18" rx="3" class="c-mask"/>
-          <text x="366.42857142857144" y="540" class="t-muted" font-size="11" text-anchor="middle">ok</text>
+          <rect x="593.6" y="550" width="38.4" height="18" rx="3" class="c-mask"/>
+          <text x="612.8000000000001" y="560" class="t-edge-dashed" font-size="11" text-anchor="middle">task</text>
         </g>
         </g>
 
-        <g data-edge-from="bl-api" data-edge-to="broker" data-edge-label="queue" data-edge-key="10" data-edge-id="m11">
-          <path data-composition-edge-from="bl-api" data-composition-edge-to="broker" data-composition-edge-id="m11" data-composition-points="321.1428571428571,585;516.2857142857142,585" d="M 321.1428571428571 585 L 516.2857142857142 585" class="a-dashed" data-animate="edge" style="--step:10" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+        <g data-edge-from="worker" data-edge-to="arcstore" data-edge-label="upsert" data-edge-key="10" data-edge-id="m11">
+          <path data-composition-edge-from="worker" data-composition-edge-to="arcstore" data-composition-edge-id="m11" data-composition-points="690.7,605;818.5,605" d="M 690.7 605 L 818.5 605" class="a-emphasis" data-animate="edge" style="--step:10" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         <g data-detail="context">
-          <rect x="396.21428571428567" y="565" width="45" height="18" rx="3" class="c-mask"/>
-          <text x="418.71428571428567" y="575" class="t-edge-dashed" font-size="11" text-anchor="middle">queue</text>
+          <rect x="728.8000000000001" y="585" width="51.599999999999994" height="18" rx="3" class="c-mask"/>
+          <text x="754.6" y="595" class="t-edge-emphasis" font-size="11" text-anchor="middle">upsert</text>
         </g>
         </g>
 
-        <g data-edge-from="bl-api" data-edge-to="api" data-edge-label="ok" data-edge-key="11" data-edge-id="m12">
-          <path data-composition-edge-from="bl-api" data-composition-edge-to="api" data-composition-edge-id="m12" data-composition-points="307.1428571428571,620;216.57142857142856,620" d="M 307.1428571428571 620 L 216.57142857142856 620" class="a-default" data-animate="edge" style="--step:11" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
+        <g data-edge-from="arcstore" data-edge-to="worker" data-edge-label="ok" data-edge-key="11" data-edge-id="m12">
+          <path data-composition-edge-from="arcstore" data-composition-edge-to="worker" data-composition-edge-id="m12" data-composition-points="818.5,640;690.7,640" d="M 818.5 640 L 690.7 640" class="a-default" data-animate="edge" style="--step:11" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="244.85714285714283" y="600" width="34" height="18" rx="3" class="c-mask"/>
-          <text x="261.85714285714283" y="610" class="t-muted" font-size="11" text-anchor="middle">ok</text>
+          <rect x="737.6" y="620" width="34" height="18" rx="3" class="c-mask"/>
+          <text x="754.6" y="630" class="t-muted" font-size="11" text-anchor="middle">ok</text>
         </g>
         </g>
 
-        <g data-edge-from="api" data-edge-to="client" data-edge-label="ok" data-edge-key="12" data-edge-id="m13">
-          <path data-composition-edge-from="api" data-composition-edge-to="client" data-composition-edge-id="m13" data-composition-points="202.57142857142856,655;112,655" d="M 202.57142857142856 655 L 112 655" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
+        <g data-edge-from="worker" data-edge-to="store" data-edge-label="event" data-edge-key="12" data-edge-id="m13">
+          <path data-composition-edge-from="worker" data-composition-edge-to="store" data-composition-edge-id="m13" data-composition-points="676.7,675;407.1,675" d="M 676.7 675 L 407.1 675" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="140.28571428571428" y="635" width="34" height="18" rx="3" class="c-mask"/>
-          <text x="157.28571428571428" y="645" class="t-muted" font-size="11" text-anchor="middle">ok</text>
+          <rect x="519.4000000000001" y="655" width="45" height="18" rx="3" class="c-mask"/>
+          <text x="541.9000000000001" y="665" class="t-muted" font-size="11" text-anchor="middle">event</text>
         </g>
         </g>
 
-        <g data-edge-from="broker" data-edge-to="worker" data-edge-label="task" data-edge-key="13" data-edge-id="m14">
-          <path data-composition-edge-from="broker" data-composition-edge-to="worker" data-composition-edge-id="m14" data-composition-points="530.2857142857142,710;620.8571428571429,710" d="M 530.2857142857142 710 L 620.8571428571429 710" class="a-dashed" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+        <g data-edge-from="store" data-edge-to="worker" data-edge-label="ok" data-edge-key="13" data-edge-id="m14">
+          <path data-composition-edge-from="store" data-composition-edge-to="worker" data-composition-edge-id="m14" data-composition-points="407.1,710;676.7,710" d="M 407.1 710 L 676.7 710" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
         <g data-detail="context">
-          <rect x="556.3714285714285" y="690" width="38.4" height="18" rx="3" class="c-mask"/>
-          <text x="575.5714285714286" y="700" class="t-edge-dashed" font-size="11" text-anchor="middle">task</text>
-        </g>
-        </g>
-
-        <g data-edge-from="worker" data-edge-to="bl-worker" data-edge-label="sync" data-edge-key="14" data-edge-id="m15">
-          <path data-composition-edge-from="worker" data-composition-edge-to="bl-worker" data-composition-edge-id="m15" data-composition-points="634.8571428571429,745;725.4285714285714,745" d="M 634.8571428571429 745 L 725.4285714285714 745" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <g data-detail="context">
-          <rect x="660.9428571428571" y="725" width="38.4" height="18" rx="3" class="c-mask"/>
-          <text x="680.1428571428571" y="735" class="t-muted" font-size="11" text-anchor="middle">sync</text>
-        </g>
-        </g>
-
-        <g data-edge-from="bl-worker" data-edge-to="arcstore" data-edge-label="upsert" data-edge-key="15" data-edge-id="m16">
-          <path data-composition-edge-from="bl-worker" data-composition-edge-to="arcstore" data-composition-edge-id="m16" data-composition-points="739.4285714285714,780;830,780" d="M 739.4285714285714 780 L 830 780" class="a-emphasis" data-animate="edge" style="--step:12" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <g data-detail="context">
-          <rect x="758.9142857142858" y="760" width="51.599999999999994" height="18" rx="3" class="c-mask"/>
-          <text x="784.7142857142858" y="770" class="t-edge-emphasis" font-size="11" text-anchor="middle">upsert</text>
-        </g>
-        </g>
-
-        <g data-edge-from="arcstore" data-edge-to="bl-worker" data-edge-label="ok" data-edge-key="16" data-edge-id="m17">
-          <path data-composition-edge-from="arcstore" data-composition-edge-to="bl-worker" data-composition-edge-id="m17" data-composition-points="830,815;739.4285714285714,815" d="M 830 815 L 739.4285714285714 815" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
-        <g data-detail="context">
-          <rect x="767.7142857142858" y="795" width="34" height="18" rx="3" class="c-mask"/>
-          <text x="784.7142857142858" y="805" class="t-muted" font-size="11" text-anchor="middle">ok</text>
-        </g>
-        </g>
-
-        <g data-edge-from="bl-worker" data-edge-to="store" data-edge-label="event" data-edge-key="17" data-edge-id="m18">
-          <path data-composition-edge-from="bl-worker" data-composition-edge-to="store" data-composition-edge-id="m18" data-composition-points="725.4285714285714,850;425.7142857142857,850" d="M 725.4285714285714 850 L 425.7142857142857 850" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <g data-detail="context">
-          <rect x="553.0714285714286" y="830" width="45" height="18" rx="3" class="c-mask"/>
-          <text x="575.5714285714286" y="840" class="t-muted" font-size="11" text-anchor="middle">event</text>
-        </g>
-        </g>
-
-        <g data-edge-from="store" data-edge-to="bl-worker" data-edge-label="ok" data-edge-key="18" data-edge-id="m19">
-          <path data-composition-edge-from="store" data-composition-edge-to="bl-worker" data-composition-edge-id="m19" data-composition-points="425.7142857142857,885;725.4285714285714,885" d="M 425.7142857142857 885 L 725.4285714285714 885" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
-        <g data-detail="context">
-          <rect x="558.5714285714286" y="865" width="34" height="18" rx="3" class="c-mask"/>
-          <text x="575.5714285714286" y="875" class="t-muted" font-size="11" text-anchor="middle">ok</text>
+          <rect x="524.9000000000001" y="690" width="34" height="18" rx="3" class="c-mask"/>
+          <text x="541.9000000000001" y="700" class="t-muted" font-size="11" text-anchor="middle">ok</text>
         </g>
         </g>
 
@@ -5428,125 +5382,103 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <text x="62" y="147" class="t-muted" font-size="9" font-weight="600">Start harvest</text>
         </g>
         <g data-graph-role="segment-label" data-segment-id="1">
-          <rect x="56" y="398" width="66" height="18" rx="3" class="c-mask"/>
-          <text x="62" y="411" class="t-muted" font-size="9" font-weight="600">Submit ARC</text>
+          <rect x="56" y="328" width="66" height="18" rx="3" class="c-mask"/>
+          <text x="62" y="341" class="t-muted" font-size="9" font-weight="600">Submit ARC</text>
         </g>
         <g data-graph-role="segment-label" data-segment-id="2">
-          <rect x="56" y="663" width="81.60000000000001" height="18" rx="3" class="c-mask"/>
-          <text x="62" y="676" class="t-muted" font-size="9" font-weight="600">Async publish</text>
+          <rect x="56" y="523" width="81.60000000000001" height="18" rx="3" class="c-mask"/>
+          <text x="62" y="536" class="t-muted" font-size="9" font-weight="600">Async publish</text>
         </g>
 
         <!-- Participants -->
         <g id="node-client" data-node-id="client" data-node-label="RDI client" tabindex="0" role="button" aria-label="RDI client fokussieren, Sequenzteilnehmer" aria-pressed="false" data-node-kind="external" data-node-context="Sequenzteilnehmer">
           <title>RDI client · Sequenzteilnehmer</title>
-          <rect x="62" y="72" width="86" height="60" rx="6" class="c-mask"/>
-          <rect x="62" y="72" width="86" height="60" rx="6" class="c-external" data-animate="node" style="--step:0" stroke-width="1.5"/>
+          <rect x="62" y="72" width="109" height="60" rx="6" class="c-mask"/>
+          <rect x="62" y="72" width="109" height="60" rx="6" class="c-external" data-animate="node" style="--step:0" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(68 78) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" x="105" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">RDI client</text>
+          <text data-node-label="" x="116.5" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">RDI client</text>
         </g>
 
-        <g id="node-api" data-node-id="api" data-node-label="API" tabindex="0" role="button" aria-label="API fokussieren, HTTP, Sequenzteilnehmer" aria-pressed="false" data-node-kind="backend" data-node-sublabel="HTTP" data-node-context="Sequenzteilnehmer">
-          <title>API · HTTP · Sequenzteilnehmer</title>
-          <rect x="166.57142857142856" y="72" width="86" height="60" rx="6" class="c-mask"/>
-          <rect x="166.57142857142856" y="72" width="86" height="60" rx="6" class="c-backend" data-animate="node" style="--step:1" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(172.57142857142856 78) scale(0.6875)">
+        <g id="node-api" data-node-id="api" data-node-label="API" tabindex="0" role="button" aria-label="API fokussieren, HTTP · BusinessLogic, Sequenzteilnehmer" aria-pressed="false" data-node-kind="backend" data-node-sublabel="HTTP · BusinessLogic" data-node-context="Sequenzteilnehmer">
+          <title>API · HTTP · BusinessLogic · Sequenzteilnehmer</title>
+          <rect x="203.8" y="72" width="109" height="60" rx="6" class="c-mask"/>
+          <rect x="203.8" y="72" width="109" height="60" rx="6" class="c-backend" data-animate="node" style="--step:1" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(209.8 78) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="209.57142857142856" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">API</text>
-          <text data-detail="context" x="209.57142857142856" y="122" class="t-muted" font-size="7" text-anchor="middle">HTTP</text>
-        </g>
-
-        <g id="node-bl-api" data-node-id="bl-api" data-node-label="BusinessLogic" tabindex="0" role="button" aria-label="BusinessLogic fokussieren, API process, Sequenzteilnehmer" aria-pressed="false" data-node-kind="backend" data-node-sublabel="API process" data-node-context="Sequenzteilnehmer">
-          <title>BusinessLogic · API process · Sequenzteilnehmer</title>
-          <rect x="271.1428571428571" y="72" width="86" height="60" rx="6" class="c-mask"/>
-          <rect x="271.1428571428571" y="72" width="86" height="60" rx="6" class="c-backend" data-animate="node" style="--step:2" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(277.1428571428571 78) scale(0.6875)">
-            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="314.1428571428571" y="108" class="t-primary" font-size="10" font-weight="600" text-anchor="middle">BusinessLogic</text>
-          <text data-detail="context" x="314.1428571428571" y="122" class="t-muted" font-size="7" text-anchor="middle">API process</text>
+          <text data-node-label="" data-detail-anchor="" x="258.3" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">API</text>
+          <text data-detail="context" x="258.3" y="122" class="t-muted" font-size="7" text-anchor="middle">HTTP · BusinessLogic</text>
         </g>
 
         <g id="node-store" data-node-id="store" data-node-label="DocumentStore" tabindex="0" role="button" aria-label="DocumentStore fokussieren, CouchDB, Sequenzteilnehmer" aria-pressed="false" data-node-kind="database" data-node-sublabel="CouchDB" data-node-context="Sequenzteilnehmer">
           <title>DocumentStore · CouchDB · Sequenzteilnehmer</title>
-          <rect x="375.7142857142857" y="72" width="86" height="60" rx="6" class="c-mask"/>
-          <rect x="375.7142857142857" y="72" width="86" height="60" rx="6" class="c-database" data-animate="node" style="--step:3" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(381.7142857142857 78) scale(0.6875)">
+          <rect x="345.6" y="72" width="109" height="60" rx="6" class="c-mask"/>
+          <rect x="345.6" y="72" width="109" height="60" rx="6" class="c-database" data-animate="node" style="--step:2" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(351.6 78) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="418.7142857142857" y="108" class="t-primary" font-size="10" font-weight="600" text-anchor="middle">DocumentStore</text>
-          <text data-detail="context" x="418.7142857142857" y="122" class="t-muted" font-size="7" text-anchor="middle">CouchDB</text>
+          <text data-node-label="" data-detail-anchor="" x="400.1" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">DocumentStore</text>
+          <text data-detail="context" x="400.1" y="122" class="t-muted" font-size="7" text-anchor="middle">CouchDB</text>
         </g>
 
         <g id="node-broker" data-node-id="broker" data-node-label="RabbitMQ" tabindex="0" role="button" aria-label="RabbitMQ fokussieren, shared, Sequenzteilnehmer" aria-pressed="false" data-node-kind="messagebus" data-node-sublabel="shared" data-node-context="Sequenzteilnehmer">
           <title>RabbitMQ · shared · Sequenzteilnehmer</title>
-          <rect x="480.2857142857142" y="72" width="86" height="60" rx="6" class="c-mask"/>
-          <rect x="480.2857142857142" y="72" width="86" height="60" rx="6" class="c-messagebus" data-animate="node" style="--step:4" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="messagebus" class="semantic-sigil s-messagebus" transform="translate(486.2857142857142 78) scale(0.6875)">
+          <rect x="487.4000000000001" y="72" width="109" height="60" rx="6" class="c-mask"/>
+          <rect x="487.4000000000001" y="72" width="109" height="60" rx="6" class="c-messagebus" data-animate="node" style="--step:3" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="messagebus" class="semantic-sigil s-messagebus" transform="translate(493.4000000000001 78) scale(0.6875)">
             <path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/>
             <circle cx="5" cy="4.5" r="1" class="sigil-fill"/>
             <circle cx="10.5" cy="8" r="1" class="sigil-fill"/>
             <circle cx="7" cy="11.5" r="1" class="sigil-fill"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="523.2857142857142" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">RabbitMQ</text>
-          <text data-detail="context" x="523.2857142857142" y="122" class="t-muted" font-size="7" text-anchor="middle">shared</text>
+          <text data-node-label="" data-detail-anchor="" x="541.9000000000001" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">RabbitMQ</text>
+          <text data-detail="context" x="541.9000000000001" y="122" class="t-muted" font-size="7" text-anchor="middle">shared</text>
         </g>
 
-        <g id="node-worker" data-node-id="worker" data-node-label="Worker" tabindex="0" role="button" aria-label="Worker fokussieren, Celery, Sequenzteilnehmer" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Celery" data-node-context="Sequenzteilnehmer">
-          <title>Worker · Celery · Sequenzteilnehmer</title>
-          <rect x="584.8571428571429" y="72" width="86" height="60" rx="6" class="c-mask"/>
-          <rect x="584.8571428571429" y="72" width="86" height="60" rx="6" class="c-backend" data-animate="node" style="--step:5" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(590.8571428571429 78) scale(0.6875)">
+        <g id="node-worker" data-node-id="worker" data-node-label="Worker" tabindex="0" role="button" aria-label="Worker fokussieren, Celery · BusinessLogic, Sequenzteilnehmer" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Celery · BusinessLogic" data-node-context="Sequenzteilnehmer">
+          <title>Worker · Celery · BusinessLogic · Sequenzteilnehmer</title>
+          <rect x="629.2" y="72" width="109" height="60" rx="6" class="c-mask"/>
+          <rect x="629.2" y="72" width="109" height="60" rx="6" class="c-backend" data-animate="node" style="--step:4" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(635.2 78) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="627.8571428571429" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Worker</text>
-          <text data-detail="context" x="627.8571428571429" y="122" class="t-muted" font-size="7" text-anchor="middle">Celery</text>
-        </g>
-
-        <g id="node-bl-worker" data-node-id="bl-worker" data-node-label="BusinessLogic" tabindex="0" role="button" aria-label="BusinessLogic fokussieren, worker, Sequenzteilnehmer" aria-pressed="false" data-node-kind="backend" data-node-sublabel="worker" data-node-context="Sequenzteilnehmer">
-          <title>BusinessLogic · worker · Sequenzteilnehmer</title>
-          <rect x="689.4285714285714" y="72" width="86" height="60" rx="6" class="c-mask"/>
-          <rect x="689.4285714285714" y="72" width="86" height="60" rx="6" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(695.4285714285714 78) scale(0.6875)">
-            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="732.4285714285714" y="108" class="t-primary" font-size="10" font-weight="600" text-anchor="middle">BusinessLogic</text>
-          <text data-detail="context" x="732.4285714285714" y="122" class="t-muted" font-size="7" text-anchor="middle">worker</text>
+          <text data-node-label="" data-detail-anchor="" x="683.7" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Worker</text>
+          <text data-detail="context" x="683.7" y="122" class="t-muted" font-size="7" text-anchor="middle">Celery · BusinessLogic</text>
         </g>
 
         <g id="node-arcstore" data-node-id="arcstore" data-node-label="ArcStore" tabindex="0" role="button" aria-label="ArcStore fokussieren, Port, Sequenzteilnehmer" aria-pressed="false" data-node-kind="cloud" data-node-sublabel="Port" data-node-context="Sequenzteilnehmer">
           <title>ArcStore · Port · Sequenzteilnehmer</title>
-          <rect x="794" y="72" width="86" height="60" rx="6" class="c-mask"/>
-          <rect x="794" y="72" width="86" height="60" rx="6" class="c-cloud" data-animate="node" style="--step:7" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="cloud" class="semantic-sigil s-cloud" transform="translate(800 78) scale(0.6875)">
+          <rect x="771" y="72" width="109" height="60" rx="6" class="c-mask"/>
+          <rect x="771" y="72" width="109" height="60" rx="6" class="c-cloud" data-animate="node" style="--step:5" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="cloud" class="semantic-sigil s-cloud" transform="translate(777 78) scale(0.6875)">
             <path d="M4.3 12.5h7.3a2.4 2.4 0 0 0 .2-4.8 4 4 0 0 0-7.5-1.3A3.1 3.1 0 0 0 4.3 12.5Z"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="837" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">ArcStore</text>
-          <text data-detail="context" x="837" y="122" class="t-muted" font-size="7" text-anchor="middle">Port</text>
+          <text data-node-label="" data-detail-anchor="" x="825.5" y="108" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">ArcStore</text>
+          <text data-detail="context" x="825.5" y="122" class="t-muted" font-size="7" text-anchor="middle">Port</text>
         </g>
 
         <!-- Legend -->
         <g data-legend="">
-          <text x="40" y="939" class="t-primary" font-size="12" font-weight="650">Legende</text>
-          <g data-legend-semantic-kind="emphasis" data-legend-x="40" data-legend-baseline="959" data-legend-width="118">
-            <path d="M 40 956 L 74 956" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-            <text x="83" y="959" class="t-muted" font-size="10" font-weight="500">Hauptanfrage</text>
+          <text x="40" y="764" class="t-primary" font-size="12" font-weight="650">Legende</text>
+          <g data-legend-semantic-kind="emphasis" data-legend-x="40" data-legend-baseline="784" data-legend-width="118">
+            <path d="M 40 781 L 74 781" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+            <text x="83" y="784" class="t-muted" font-size="10" font-weight="500">Hauptanfrage</text>
           </g>
-          <g data-legend-semantic-kind="return" data-legend-x="180" data-legend-baseline="959" data-legend-width="93">
-            <path d="M 180 956 L 214 956" class="a-default" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
-            <text x="223" y="959" class="t-muted" font-size="10" font-weight="500">Rückgabe</text>
+          <g data-legend-semantic-kind="return" data-legend-x="180" data-legend-baseline="784" data-legend-width="93">
+            <path d="M 180 781 L 214 781" class="a-default" stroke-width="1.4" stroke-dasharray="3,5" marker-end="url(#arrowhead)"/>
+            <text x="223" y="784" class="t-muted" font-size="10" font-weight="500">Rückgabe</text>
           </g>
-          <g data-legend-semantic-kind="dashed" data-legend-x="295" data-legend-baseline="959" data-legend-width="149">
-            <path d="M 295 956 L 329 956" class="a-dashed" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-            <text x="338" y="959" class="t-muted" font-size="10" font-weight="500">asynchroner Trace</text>
+          <g data-legend-semantic-kind="dashed" data-legend-x="295" data-legend-baseline="784" data-legend-width="149">
+            <path d="M 295 781 L 329 781" class="a-dashed" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+            <text x="338" y="784" class="t-muted" font-size="10" font-weight="500">asynchroner Trace</text>
           </g>
-          <g data-legend-semantic-kind="default" data-legend-x="466" data-legend-baseline="959" data-legend-width="99">
-            <path d="M 466 956 L 500 956" class="a-default" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-            <text x="509" y="959" class="t-muted" font-size="10" font-weight="500">Nachricht</text>
+          <g data-legend-semantic-kind="default" data-legend-x="466" data-legend-baseline="784" data-legend-width="99">
+            <path d="M 466 781 L 500 781" class="a-default" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+            <text x="509" y="784" class="t-muted" font-size="10" font-weight="500">Nachricht</text>
           </g>
         </g>
       </svg>
@@ -5729,12 +5661,12 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <div class="card">
         <div class="card-header">
           <div class="card-dot emerald"></div>
-          <h3>Processes vs library</h3>
+          <h3>Two processes</h3>
         </div>
         <ul>
-          <li>Two processes: API and Worker</li>
-          <li>BusinessLogic is library code in each process — not its own runtime</li>
+          <li>API and Worker each run BusinessLogic as library code in-process</li>
           <li>Shared across processes: DocumentStore (CouchDB) and RabbitMQ</li>
+          <li>ArcStore is the Git publish port used only in the worker</li>
         </ul>
       </div>
 
@@ -5744,9 +5676,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>Async boundary</h3>
         </div>
         <ul>
-          <li>API process: store + enqueue (full ARC JSON-LD in ArcSyncTask)</li>
-          <li>Worker process: ARCtrl → ArcStore; CouchDB for events only</li>
-          <li>Short labels: harvest/arc are the HTTP posts; create/upsert map to create_harvest / create_or_update_arc; queue carries full ARC JSON-LD</li>
+          <li>API: store ARC in CouchDB and enqueue publish, then return HTTP</li>
+          <li>Worker: sync via ArcStore; CouchDB only for events</li>
+          <li>harvest/arc are the HTTP posts; queue carries full ARC JSON-LD</li>
         </ul>
       </div>
     </div>
