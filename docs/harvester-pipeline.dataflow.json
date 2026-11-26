@@ -51,9 +51,8 @@
     {
       "id": "protocol",
       "type": "backend",
-      "label": "Protocol",
+      "label": "generic Protocol",
       "sublabel": "6 registered · discover()",
-      "tag": "generic",
       "stage": 0,
       "row": 0,
       "sources": [
@@ -67,9 +66,8 @@
     {
       "id": "oai-list",
       "type": "backend",
-      "label": "OAI-PMH",
-      "sublabel": "ListRecords",
-      "tag": "oai_pmh",
+      "label": "oai_pmh",
+      "sublabel": "iter_discovery_units()",
       "stage": 0,
       "row": 2,
       "sources": [
@@ -83,9 +81,8 @@
     {
       "id": "inspire-csw",
       "type": "backend",
-      "label": "CSW + IsoParser",
-      "sublabel": "InspireRecord",
-      "tag": "inspire",
+      "label": "inspire CSWClient",
+      "sublabel": "get_records_async()",
       "stage": 0,
       "row": 4,
       "sources": [
@@ -229,8 +226,8 @@
       "title": "Protocol registry (generic only)",
       "items": [
         "xml · mycore_solr · mycore_rest · dcat_ap · pubplant_json_array · regal_find",
-        "OAI-PMH ListRecords and INSPIRE CSW are outside this ABC",
-        "Generic and OAI hand DiscoveryResult / XmlDiscoveryResult to PayloadParser"
+        "oai_pmh and inspire discover outside this ABC",
+        "generic and oai_pmh hand DiscoveryResult / XmlDiscoveryResult to PayloadParser"
       ]
     },
     {
