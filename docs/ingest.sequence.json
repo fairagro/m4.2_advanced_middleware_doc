@@ -2,7 +2,7 @@
   "schema_version": 1,
   "diagram_type": "sequence",
   "meta": {
-    "title": "Harvest ingest: BL lives in the API or worker process",
+    "title": "Harvest ingest: API and worker processes",
     "locale": "en",
     "translations": {
       "page.title": "{title} Diagramm",
@@ -494,7 +494,7 @@
       "id": "api",
       "type": "backend",
       "label": "API",
-      "sublabel": "HTTP",
+      "sublabel": "HTTP \u00b7 BusinessLogic",
       "sources": [
         {
           "path": "middleware/api_v3/src/middleware/api_v3/routers/harvests.py",
@@ -505,24 +505,11 @@
           "path": "middleware/api/src/middleware/api/api/v3/lifecycle_port.py",
           "line": 61,
           "end_line": 164
-        }
-      ]
-    },
-    {
-      "id": "bl-api",
-      "type": "backend",
-      "label": "BusinessLogic",
-      "sublabel": "API process",
-      "sources": [
+        },
         {
           "path": "middleware/api/src/middleware/api/business_logic/harvest_manager.py",
           "line": 61,
           "end_line": 99
-        },
-        {
-          "path": "middleware/api/src/middleware/api/business_logic/arc_manager.py",
-          "line": 115,
-          "end_line": 210
         }
       ]
     },
@@ -556,21 +543,13 @@
       "id": "worker",
       "type": "backend",
       "label": "Worker",
-      "sublabel": "Celery",
+      "sublabel": "Celery \u00b7 BusinessLogic",
       "sources": [
         {
           "path": "middleware/api/src/middleware/api/worker/worker.py",
           "line": 111,
           "end_line": 155
-        }
-      ]
-    },
-    {
-      "id": "bl-worker",
-      "type": "backend",
-      "label": "BusinessLogic",
-      "sublabel": "worker",
-      "sources": [
+        },
         {
           "path": "middleware/api/src/middleware/api/business_logic/business_logic.py",
           "line": 260,
@@ -600,17 +579,17 @@
   "segments": [
     {
       "from": 156,
-      "to": 379,
+      "to": 309,
       "label": "Start harvest"
     },
     {
-      "from": 420,
-      "to": 659,
+      "from": 350,
+      "to": 519,
       "label": "Submit ARC"
     },
     {
-      "from": 685,
-      "to": 915,
+      "from": 545,
+      "to": 740,
       "label": "Async publish"
     }
   ],
@@ -620,233 +599,184 @@
       "from": "client",
       "to": "api",
       "label": "harvest",
-      "variant": "emphasis",
-      "y": 200
+      "y": 200,
+      "variant": "emphasis"
     },
     {
       "id": "m2",
       "from": "api",
-      "to": "bl-api",
-      "label": "create",
+      "to": "store",
+      "label": "save",
       "y": 235
     },
     {
       "id": "m3",
-      "from": "bl-api",
-      "to": "store",
-      "label": "save",
-      "y": 270
+      "from": "store",
+      "to": "api",
+      "label": "ok",
+      "y": 270,
+      "variant": "return"
     },
     {
       "id": "m4",
-      "from": "store",
-      "to": "bl-api",
+      "from": "api",
+      "to": "client",
       "label": "ok",
-      "variant": "return",
-      "y": 305
+      "y": 305,
+      "variant": "return"
     },
     {
       "id": "m5",
-      "from": "bl-api",
+      "from": "client",
       "to": "api",
-      "label": "ok",
-      "variant": "return",
-      "y": 340
+      "label": "arc",
+      "y": 375,
+      "variant": "emphasis"
     },
     {
       "id": "m6",
       "from": "api",
-      "to": "client",
-      "label": "ok",
-      "variant": "return",
-      "y": 375
+      "to": "store",
+      "label": "store",
+      "y": 410
     },
     {
       "id": "m7",
-      "from": "client",
+      "from": "store",
       "to": "api",
-      "label": "arc",
-      "variant": "emphasis",
-      "y": 445
+      "label": "ok",
+      "y": 445,
+      "variant": "return"
     },
     {
       "id": "m8",
       "from": "api",
-      "to": "bl-api",
-      "label": "upsert",
-      "y": 480
+      "to": "broker",
+      "label": "queue",
+      "y": 480,
+      "variant": "dashed"
     },
     {
       "id": "m9",
-      "from": "bl-api",
-      "to": "store",
-      "label": "store",
-      "y": 515
-    },
-    {
-      "id": "m10",
-      "from": "store",
-      "to": "bl-api",
-      "label": "ok",
-      "variant": "return",
-      "y": 550
-    },
-    {
-      "id": "m11",
-      "from": "bl-api",
-      "to": "broker",
-      "label": "queue",
-      "variant": "dashed",
-      "y": 585
-    },
-    {
-      "id": "m12",
-      "from": "bl-api",
-      "to": "api",
-      "label": "ok",
-      "variant": "return",
-      "y": 620
-    },
-    {
-      "id": "m13",
       "from": "api",
       "to": "client",
       "label": "ok",
-      "variant": "return",
-      "y": 655
+      "y": 515,
+      "variant": "return"
     },
     {
-      "id": "m14",
+      "id": "m10",
       "from": "broker",
       "to": "worker",
       "label": "task",
-      "variant": "dashed",
-      "y": 710
+      "y": 570,
+      "variant": "dashed"
     },
     {
-      "id": "m15",
+      "id": "m11",
       "from": "worker",
-      "to": "bl-worker",
-      "label": "sync",
-      "y": 745
-    },
-    {
-      "id": "m16",
-      "from": "bl-worker",
       "to": "arcstore",
       "label": "upsert",
-      "variant": "emphasis",
-      "y": 780
+      "y": 605,
+      "variant": "emphasis"
     },
     {
-      "id": "m17",
+      "id": "m12",
       "from": "arcstore",
-      "to": "bl-worker",
+      "to": "worker",
       "label": "ok",
-      "variant": "return",
-      "y": 815
+      "y": 640,
+      "variant": "return"
     },
     {
-      "id": "m18",
-      "from": "bl-worker",
+      "id": "m13",
+      "from": "worker",
       "to": "store",
       "label": "event",
-      "y": 850
+      "y": 675
     },
     {
-      "id": "m19",
+      "id": "m14",
       "from": "store",
-      "to": "bl-worker",
+      "to": "worker",
       "label": "ok",
-      "variant": "return",
-      "y": 885
+      "y": 710,
+      "variant": "return"
     }
   ],
   "activations": [
     {
       "participant": "client",
       "from": 200,
-      "to": 375,
+      "to": 305,
       "type": "external"
     },
     {
       "participant": "client",
-      "from": 445,
-      "to": 655,
+      "from": 375,
+      "to": 515,
       "type": "external"
     },
     {
       "participant": "api",
       "from": 200,
-      "to": 665,
-      "type": "backend"
-    },
-    {
-      "participant": "bl-api",
-      "from": 230,
-      "to": 630,
+      "to": 520,
       "type": "backend"
     },
     {
       "participant": "store",
-      "from": 265,
-      "to": 315,
+      "from": 230,
+      "to": 275,
       "type": "database"
     },
     {
       "participant": "store",
-      "from": 510,
-      "to": 560,
+      "from": 405,
+      "to": 450,
       "type": "database"
     },
     {
       "participant": "broker",
-      "from": 580,
-      "to": 720,
+      "from": 475,
+      "to": 575,
       "type": "messagebus"
     },
     {
       "participant": "worker",
-      "from": 705,
-      "to": 755,
-      "type": "backend"
-    },
-    {
-      "participant": "bl-worker",
-      "from": 740,
-      "to": 895,
+      "from": 565,
+      "to": 715,
       "type": "backend"
     },
     {
       "participant": "arcstore",
-      "from": 775,
-      "to": 825,
+      "from": 600,
+      "to": 645,
       "type": "cloud"
     },
     {
       "participant": "store",
-      "from": 845,
-      "to": 895,
+      "from": 670,
+      "to": 715,
       "type": "database"
     }
   ],
   "cards": [
     {
       "dot": "emerald",
-      "title": "Processes vs library",
+      "title": "Two processes",
       "items": [
-        "Two processes: API and Worker",
-        "BusinessLogic is library code in each process \u2014 not its own runtime",
-        "Shared across processes: DocumentStore (CouchDB) and RabbitMQ"
+        "API and Worker each run BusinessLogic as library code in-process",
+        "Shared across processes: DocumentStore (CouchDB) and RabbitMQ",
+        "ArcStore is the Git publish port used only in the worker"
       ]
     },
     {
       "dot": "amber",
       "title": "Async boundary",
       "items": [
-        "API process: store + enqueue (full ARC JSON-LD in ArcSyncTask)",
-        "Worker process: ARCtrl \u2192 ArcStore; CouchDB for events only",
-        "Short labels: harvest/arc are the HTTP posts; create/upsert map to create_harvest / create_or_update_arc; queue carries full ARC JSON-LD"
+        "API: store ARC in CouchDB and enqueue publish, then return HTTP",
+        "Worker: sync via ArcStore; CouchDB only for events",
+        "harvest/arc are the HTTP posts; queue carries full ARC JSON-LD"
       ]
     }
   ]
