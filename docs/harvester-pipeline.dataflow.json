@@ -67,8 +67,8 @@
     {
       "id": "oai-list",
       "type": "backend",
-      "label": "ListRecords",
-      "sublabel": "iter_discovery_units",
+      "label": "OAI-PMH",
+      "sublabel": "ListRecords",
       "tag": "oai_pmh",
       "stage": 0,
       "row": 2,

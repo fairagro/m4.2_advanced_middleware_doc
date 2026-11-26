@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "FAIRagro Advanced Middleware — ecosystem",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "output": "docs/ecosystem-overview.html",
+    "views": [
+      {
+        "id": "produce",
+        "label": "Produce",
+        "focus": ["rdi-catalog", "harvester", "rdi-sql", "sql-db", "sql-to-arc", "api"],
+        "note": "RDIs feed producers; producers upload into the API"
+      },
+      {
+        "id": "publish",
+        "label": "Publish",
+        "focus": ["api", "datahub"],
+        "note": "API publishes to DataHUB"
+      },
+      {
+        "id": "consume",
+        "label": "Consume",
+        "focus": ["datahub", "searchhub", "sciwin"],
+        "note": "Parallel consumers"
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "rdi-catalog",
+      "type": "external",
+      "label": "RDI catalog",
+      "sublabel": "source systems",
+      "tag": "RDI",
+      "pos": [40, 40]
+    },
+    {
+      "id": "sql-db",
+      "type": "database",
+      "label": "SQL database",
+      "sublabel": "ISA-shaped views",
+      "tag": "RDI",
+      "pos": [420, 40]
+    },
+    {
+      "id": "harvester",
+      "type": "backend",
+      "label": "Harvester",
+      "sublabel": "catalog → ARC",
+      "tag": "Producer",
+      "pos": [40, 220]
+    },
+    {
+      "id": "sql-to-arc",
+      "type": "backend",
+      "label": "SQL-to-ARC",
+      "sublabel": "views → ARC",
+      "tag": "Producer",
+      "pos": [420, 220]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "Middleware API",
+      "sublabel": "store · publish",
+      "tag": "Core",
+      "pos": [230, 400]
+    },
+    {
+      "id": "datahub",
+      "type": "cloud",
+      "label": "DataHUB",
+      "sublabel": "Git hosting · catalog",
+      "tag": "Publish",
+      "pos": [230, 560]
+    },
+    {
+      "id": "searchhub",
+      "type": "external",
+      "label": "SearchHUB",
+      "sublabel": "consumer",
+      "tag": "Consumer",
+      "pos": [40, 720]
+    },
+    {
+      "id": "sciwin",
+      "type": "external",
+      "label": "SciWin",
+      "sublabel": "consumer",
+      "tag": "Consumer",
+      "pos": [420, 720]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "RDI",
+      "wraps": ["rdi-catalog"]
+    },
+    {
+      "kind": "region",
+      "label": "RDI",
+      "wraps": ["sql-db", "sql-to-arc"]
+    },
+    {
+      "kind": "region",
+      "label": "Advanced Middleware",
+      "wraps": ["harvester", "api"]
+    }
+  ],
+  "connections": [
+    {
+      "id": "e-harvester-rdi",
+      "from": "harvester",
+      "to": "rdi-catalog",
+      "label": "harvest",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-sql-db",
+      "from": "sql-to-arc",
+      "to": "sql-db",
+      "label": "query views",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-harvester-api",
+      "from": "harvester",
+      "to": "api",
+      "label": "upload ARCs",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-sql-api",
+      "from": "sql-to-arc",
+      "to": "api",
+      "label": "upload ARCs",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-api-datahub",
+      "from": "api",
+      "to": "datahub",
+      "label": "publish",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-searchhub-datahub",
+      "from": "searchhub",
+      "to": "datahub",
+      "label": "consume"
+    },
+    {
+      "id": "e-sciwin-datahub",
+      "from": "sciwin",
+      "to": "datahub",
+      "label": "consume"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Producers",
+      "items": [
+        "Harvester harvests an RDI catalog and maps it to RO-Crate ARCs",
+        "SQL-to-ARC runs inside an RDI, queries its SQL views, and builds RO-Crate ARCs",
+        "Both upload ARCs into the Middleware API; the API does not harvest"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Core",
+      "items": [
+        "Middleware API accepts uploaded ARCs, stores them, and publishes asynchronously",
+        "DataHUB holds ARC repos and the consolidated catalog"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Consumers",
+      "items": [
+        "SearchHUB and SciWin are parallel consumers of DataHUB",
+        "Neither consumer is implemented in these middleware repositories"
+      ]
+    }
+  ]
+}

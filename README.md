@@ -24,8 +24,9 @@ Hub + detail diagrams (full Archify Viewer):
 
 | Diagram | URL |
 | --- | --- |
-| Docs hub (explainer) | <https://fairagro.github.io/m4.2_advanced_middleware_doc/> |
-| System overview | <https://fairagro.github.io/m4.2_advanced_middleware_doc/overview.html> |
+| Docs hub (ecosystem map) | <https://fairagro.github.io/m4.2_advanced_middleware_doc/> |
+| Ecosystem overview | <https://fairagro.github.io/m4.2_advanced_middleware_doc/ecosystem-overview.html> |
+| Middleware API system overview | <https://fairagro.github.io/m4.2_advanced_middleware_doc/overview.html> |
 | Harvest ingest | <https://fairagro.github.io/m4.2_advanced_middleware_doc/ingest-sequence.html> |
 | API process | <https://fairagro.github.io/m4.2_advanced_middleware_doc/api-detail.html> |
 | Worker process | <https://fairagro.github.io/m4.2_advanced_middleware_doc/worker-detail.html> |
@@ -33,9 +34,10 @@ Hub + detail diagrams (full Archify Viewer):
 | Harvester pipeline | <https://fairagro.github.io/m4.2_advanced_middleware_doc/harvester-pipeline.html> |
 | SQL-to-ARC overview | <https://fairagro.github.io/m4.2_advanced_middleware_doc/sql-to-arc-overview.html> |
 | SQL-to-ARC data flow | <https://fairagro.github.io/m4.2_advanced_middleware_doc/sql-to-arc-pipeline.html> |
+| SQL-to-ARC database views | <https://fairagro.github.io/m4.2_advanced_middleware_doc/sql-to-arc-views.html> |
 
-On the explainer, narrow layouts hide the inline preview — use
-**Open interactive view** or the links above.
+The hub embeds only the ecosystem map. A catalog table links every
+standalone diagram (API, Harvester, SQL-to-ARC, and the ecosystem viewer).
 
 Set the repository Pages source to **GitHub Actions** once
 (Settings → Pages).
@@ -61,9 +63,10 @@ There is **exactly one** documentation tree: [`docs/`](docs/).
 
 | Path | Role |
 | --- | --- |
-| [`docs/index.html`](docs/index.html) | Docs hub / explainer (GitHub Pages entry) |
-| `docs/overview.html` / `api-detail.html` / `worker-detail.html` / `ingest-sequence.html` | Middleware API standalone diagrams |
-| `docs/harvester-*.html` / `docs/sql-to-arc-*.html` | Harvester and SQL-to-ARC standalone diagrams |
+| [`docs/index.html`](docs/index.html) | Docs hub (ecosystem map only; GitHub Pages entry) |
+| `docs/ecosystem-overview.html` | Standalone ecosystem overview |
+| `docs/overview.html` / `api-detail.html` / `worker-detail.html` / `ingest-sequence.html` | Middleware API detail diagrams |
+| `docs/harvester-*.html` / `docs/sql-to-arc-*.html` | Harvester and SQL-to-ARC detail diagrams |
 | `docs/*.architecture.json` / `*.sequence.json` / `*.dataflow.json` | Archify sources |
 | `docs/candidate.archify.md` | Explainer source |
 
@@ -86,6 +89,10 @@ API=/workspaces/m4.2_advanced_middleware_api
 HARVESTER=/workspaces/m4.2_middleware_harvester
 SQL_TO_ARC=/workspaces/m4.2_sql_to_arc
 
+node "$BIN" finalize architecture docs/ecosystem-overview.architecture.json docs/ecosystem-overview.html \
+  --quality showcase
+node "$BIN" finalize explainer docs/candidate.archify.md docs/index.html \
+  --quality showcase
 node "$BIN" finalize architecture docs/overview.architecture.json docs/overview.html \
   --repo-root "$API" --quality showcase
 node "$BIN" finalize sequence docs/ingest.sequence.json docs/ingest-sequence.html \
@@ -93,8 +100,6 @@ node "$BIN" finalize sequence docs/ingest.sequence.json docs/ingest-sequence.htm
 node "$BIN" finalize architecture docs/api-detail.architecture.json docs/api-detail.html \
   --repo-root "$API" --quality showcase
 node "$BIN" finalize architecture docs/worker-detail.architecture.json docs/worker-detail.html \
-  --repo-root "$API" --quality showcase
-node "$BIN" finalize explainer docs/candidate.archify.md docs/index.html \
   --repo-root "$API" --quality showcase
 node "$BIN" finalize architecture docs/harvester-overview.architecture.json docs/harvester-overview.html \
   --repo-root "$HARVESTER" --quality showcase
@@ -104,7 +109,10 @@ node "$BIN" finalize architecture docs/sql-to-arc-overview.architecture.json doc
   --repo-root "$SQL_TO_ARC" --quality showcase
 node "$BIN" finalize dataflow docs/sql-to-arc-pipeline.dataflow.json docs/sql-to-arc-pipeline.html \
   --repo-root "$SQL_TO_ARC" --quality showcase
+node "$BIN" finalize erd docs/sql-to-arc-views.erd.json docs/sql-to-arc-views.html \
+  --repo-root "$SQL_TO_ARC" --quality standard
 ```
+
 
 ## Prerequisites (Dev Container)
 
